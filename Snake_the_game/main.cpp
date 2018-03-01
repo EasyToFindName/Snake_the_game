@@ -17,7 +17,7 @@ std::vector<std::unique_ptr<StaticObject>> generateLevel1(unsigned width, unsign
 		mo.push_back(std::unique_ptr<Wall>(new Wall(Point(width - 1, y))));
 	}
 	
-	std::unique_ptr<Portal> p1(new Portal(Point(11, 5)));
+	std::unique_ptr<Portal> p1(new Portal(Point(5, 5)));
 	std::unique_ptr<Portal> p2(new Portal(Point(width-5, height-5)));
 	
 	p1->connectWith(*p2);
@@ -40,10 +40,10 @@ std::vector<std::unique_ptr<StaticObject>> generateLevel1(unsigned width, unsign
 std::vector<std::unique_ptr<DynamicObject>> generateDynObjectsLevel1() {
 	std::vector<std::unique_ptr<DynamicObject>> ret;
 
-	ret.push_back(std::unique_ptr<CircularSaw>(new CircularSaw(Point(10, 1), Point(10, 10), sf::milliseconds(100))));
-	ret.push_back(std::unique_ptr<CircularSaw>(new CircularSaw(Point(13, 1), Point(13, 10), sf::milliseconds(75))));
-	ret.push_back(std::unique_ptr<CircularSaw>(new CircularSaw(Point(16, 1), Point(16, 10), sf::milliseconds(66))));
-	ret.push_back(std::unique_ptr<CircularSaw>(new CircularSaw(Point(19, 1), Point(19, 10), sf::milliseconds(150))));
+	ret.push_back(std::unique_ptr<CircularSaw>(new CircularSaw(Point(15, 1), Point(15, 6), sf::milliseconds(150))));
+	ret.push_back(std::unique_ptr<CircularSaw>(new CircularSaw(Point(15, 15), Point(15, 22), sf::milliseconds(125))));
+	ret.push_back(std::unique_ptr<CircularSaw>(new CircularSaw(Point(1, 11), Point(6, 11), sf::milliseconds(100))));
+	ret.push_back(std::unique_ptr<CircularSaw>(new CircularSaw(Point(24, 11), Point(30, 11), sf::milliseconds(200))));
 
 	return ret;
 }

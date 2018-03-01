@@ -122,6 +122,8 @@ void Map::draw() const {
 		m_window.draw(rect);
 	}
 
+	m_food->draw(m_window);
+
 	for (auto& object : m_staticObjects) {
 		object->draw(m_window);
 	}
@@ -131,6 +133,5 @@ void Map::draw() const {
 	}
 	
 	m_snake->draw(m_window);
-	m_food->draw(m_window);
 }
 
