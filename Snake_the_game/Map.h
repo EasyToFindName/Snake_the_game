@@ -2,6 +2,8 @@
 #include "Food.h"
 #include "Wall.h"
 #include "Snake.h"
+#include "Updatable.h"
+#include "Timer.h"
 #include "Interfaces.h"
 #include "RandomGenerator.h"
 #include "Portal.h"
@@ -15,15 +17,13 @@
 //should be refactored
 
 class Map {
-	static constexpr unsigned int _GAME_UPDATE_RATE = 300; //ms
-	static constexpr unsigned int GAME_OVER_DELAY = 1000; //ms
 public:
 	//Map(unsigned width, unsigned height);
 	Map(sf::RenderWindow& window, unsigned width, unsigned height,
 		std::vector<std::unique_ptr<StaticObject>>&& mapObjects,
 		std::vector<std::unique_ptr<DynamicObject>>&& dynObjects);
 
-	void update(const sf::Time& elapsed);
+	void run(const sf::Time& elapsed);
 	void draw() const;
 
 	void catchInput(const sf::Keyboard::Key&);
@@ -40,10 +40,8 @@ private:
 	sf::RenderWindow& m_window;
 
 	RandomGenerator m_rand;
-	sf::Time m_elapsedTime;
+	Timer m_gameTimer;
 	unsigned m_width;
 	unsigned m_height;
-private:
-	static const sf::Time GAME_UPDATE_RATE;
 };
 

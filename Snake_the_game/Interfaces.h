@@ -34,3 +34,14 @@ interface Reactable {
 	//otherwise returns false
 	virtual bool reactOn(Reactor& r) = 0;
 };
+
+//Observer pattern interfaces
+interface Notifier {
+	virtual void attach(Notifiable*) = 0;
+	virtual void detach(Notifiable*) = 0;
+	virtual void notify() = 0;
+};
+
+interface Notifiable {
+	virtual void update() = 0;
+};

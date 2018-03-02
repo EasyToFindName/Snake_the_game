@@ -55,6 +55,15 @@
     <Filter Include="GameObjects\CircularSaw">
       <UniqueIdentifier>{218b9ad0-2a9f-47f5-8ccc-8474c515b940}</UniqueIdentifier>
     </Filter>
+    <Filter Include="BaseObjects\Timer">
+      <UniqueIdentifier>{109d6531-3e9c-41a1-99f9-77d0681c78dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BaseObjects\BaseNotifier">
+      <UniqueIdentifier>{f17315ca-c0f6-44c3-8bdf-71b8e588f7d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BaseObjects\BaseNotifiable">
+      <UniqueIdentifier>{f98ab8bd-bb67-485d-a6f4-34dc17bbfa2d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Point.cpp">
@@ -95,6 +104,15 @@
     </ClCompile>
     <ClCompile Include="CircularSaw.cpp">
       <Filter>GameObjects\CircularSaw</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>BaseObjects\Timer</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseNotifier.cpp">
+      <Filter>BaseObjects\BaseNotifier</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseNotifiable.cpp">
+      <Filter>BaseObjects\BaseNotifiable</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -139,6 +157,15 @@
     </ClInclude>
     <ClInclude Include="CircularSaw.h">
       <Filter>GameObjects\CircularSaw</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>BaseObjects\Timer</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseNotifier.h">
+      <Filter>BaseObjects\BaseNotifier</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseNotifiable.h">
+      <Filter>BaseObjects\BaseNotifiable</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

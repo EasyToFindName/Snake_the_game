@@ -137,12 +137,15 @@
     <ClCompile Include="Food.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="BaseNotifiable.cpp" />
+    <ClCompile Include="BaseNotifier.cpp" />
     <ClCompile Include="StaticObject.cpp" />
     <ClCompile Include="Point.cpp" />
     <ClCompile Include="Portal.cpp" />
     <ClCompile Include="RandomGenerator.cpp" />
     <ClCompile Include="CircularSaw.cpp" />
     <ClCompile Include="Snake.cpp" />
+    <ClCompile Include="Timer.cpp" />
     <ClCompile Include="Updatable.cpp" />
     <ClCompile Include="Wall.cpp" />
   </ItemGroup>
@@ -153,12 +156,15 @@
     <ClInclude Include="Food.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="Interfaces.h" />
+    <ClInclude Include="BaseNotifiable.h" />
+    <ClInclude Include="BaseNotifier.h" />
     <ClInclude Include="StaticObject.h" />
     <ClInclude Include="Point.h" />
     <ClInclude Include="Portal.h" />
     <ClInclude Include="RandomGenerator.h" />
     <ClInclude Include="CircularSaw.h" />
     <ClInclude Include="Snake.h" />
+    <ClInclude Include="Timer.h" />
     <ClInclude Include="Updatable.h" />
     <ClInclude Include="Wall.h" />
   </ItemGroup>

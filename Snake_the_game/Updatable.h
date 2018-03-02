@@ -1,16 +1,21 @@
 #pragma once
 #include <SFML/System.hpp>
 
-class Updatable
-{
+#include "Timer.h"
+
+class Updatable {
 public:
 	Updatable(const sf::Time& period);
-	virtual bool update(const sf::Time& deltaTime) = 0;
+	virtual void update() = 0;
 
-	bool updateTimer(const sf::Time& deltaTime);
+	void subscribeOn(Timer& t);
+	void unsubscribe();
 	void resetTimer();
+	void shiftTime(const sf::Time& delta);
+
+	sf::Time getTime() const;
 private:
-	sf::Time m_timePassed;
 	sf::Time m_period;
+	Timer* m_subscribedOn;
 };
 

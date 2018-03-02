@@ -1,20 +1,20 @@
 #pragma once
-#include "Interfaces.h"
+
+#include "Updatable.h"
 #include <SFML/System.hpp>
 #include <set>
-class Timer : public Notifier {
-public:
-	Timer(const sf::Time& period);
 
-	void update(const sf::Time& deltaTime);
-public: //Notifier implementation
-	virtual void attach(Updatable*) override;
-	virtual void detach(Updatable*) override;
-	virtual void notify() override;
+class Updatable;
+class Timer {
+public:
+	Timer();
+	void tick(const sf::Time& deltaTime);
+
+	void attach(Updatable*);
+	void detach(Updatable*);
+	void notify();
 private:
 	sf::Time m_timePassed;
-	sf::Time m_period;
-
 	std::set<Updatable*> m_subscribers;
 };
 

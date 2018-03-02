@@ -6,8 +6,7 @@ const sf::Time Map::GAME_UPDATE_RATE = sf::milliseconds(_GAME_UPDATE_RATE);
 
 Map::Map(sf::RenderWindow& window, unsigned width, unsigned height,
 	std::vector<std::unique_ptr<StaticObject>>&& mapObjects,
-	std::vector<std::unique_ptr<DynamicObject>>&& dynObjects)
-	:m_elapsedTime(sf::Time::Zero),
+	std::vector<std::unique_ptr<DynamicObject>>&& dynObjects):
 	 m_width(width),
 	 m_height(height),
 	 m_staticObjects(std::move(mapObjects)),
@@ -24,7 +23,7 @@ void Map::load() {
 	m_food->pos = generateFoodPos();
 }
 
-void Map::update(const sf::Time& elapsed) {
+void Map::run(const sf::Time& elapsed) {
 	
 	if(!m_snake->isAlive()) {
 		load();

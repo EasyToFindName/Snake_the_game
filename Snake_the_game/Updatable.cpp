@@ -1,20 +1,31 @@
 #include "Updatable.h"
 
-Updatable::Updatable(const sf::Time & period) : m_period(period), m_timePassed(sf::Time::Zero) {
-	
+Updatable::Updatable(const sf::Time & period) : m_period(period), m_subscribedOn(nullptr) {
+		
 }
 
-bool Updatable::updateTimer(const sf::Time& dt) {
-	m_timePassed += dt;
+void Updatable::subscribeOn(Timer& t) {
+	unsubscribe();
+	m_subscribedOn = &t;
+	t.attach(this);
+}
 
-	if (m_timePassed > m_period) {
-		m_timePassed = sf::Time::Zero;
-		return true;
-	}
+void Updatable::unsubscribe() {
+	if(m_subscribedOn != nullptr)
+		m_subscribedOn->detach(this);
+	
+	m_subscribedOn = nullptr;
+}
 
-	return false;
+void Updatable::shiftTime(const sf::Time& delta) {
+	m_period += delta;
+}
+
+sf::Time Updatable::getTime() const {
+	return m_period;
 }
 
 void Updatable::resetTimer() {
-	m_timePassed = m_period;
+	m_period = sf::Time::Zero;
 }
+
