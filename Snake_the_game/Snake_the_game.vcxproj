@@ -78,8 +78,8 @@
     <LibraryPath>G:\ThirdPartyLibs\lib\Release\SFML;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>G:\ThirdPartyLibs\include;$(IncludePath)</IncludePath>
-    <LibraryPath>G:\ThirdPartyLibs\lib\Release\x64\SFML;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(THIRD_PARTY_INCLUDE_PATH);$(IncludePath)</IncludePath>
+    <LibraryPath>$(THIRD_PARTY_LIBx64_PATH)\Release\SFML;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

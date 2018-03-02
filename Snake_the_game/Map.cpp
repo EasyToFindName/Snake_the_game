@@ -26,8 +26,7 @@ void Map::load() {
 
 void Map::update(const sf::Time& elapsed) {
 	
-	if (!m_snake->isAlive()) {
-		sf::sleep(sf::microseconds(GAME_OVER_DELAY));
+	if(!m_snake->isAlive()) {
 		load();
 		return;
 	}
