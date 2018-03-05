@@ -2,6 +2,7 @@
 #define interface struct
 
 class Snake;
+class CircularSaw;
 #include <SFML\Graphics.hpp>
 #include <SFML\Window.hpp>
 
@@ -27,6 +28,7 @@ interface Movable {
 interface Reactor {
 	//returns ReactOn status
 	virtual bool affect(Snake&) = 0;
+	virtual bool affect(CircularSaw&) = 0;
 };
 
 interface Reactable {

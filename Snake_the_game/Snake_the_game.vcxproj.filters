@@ -27,10 +27,6 @@
     <Filter Include="GameObjects\Food">
       <UniqueIdentifier>{d8033544-f240-4208-bdb5-b6659da71dde}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Entry_point">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
     <Filter Include="GameObjects\Wall">
       <UniqueIdentifier>{5e99cbf5-f95e-4f38-a9b9-426425934199}</UniqueIdentifier>
     </Filter>
@@ -55,6 +51,10 @@
     <Filter Include="Basics\Timer">
       <UniqueIdentifier>{cb4e561a-0710-44f9-b54d-a0de766f575a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="------------ Entry_point">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Point.cpp">
@@ -73,7 +73,7 @@
       <Filter>GameObjects\Food</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
-      <Filter>Entry_point</Filter>
+      <Filter>------------ Entry_point</Filter>
     </ClCompile>
     <ClCompile Include="Wall.cpp">
       <Filter>GameObjects\Wall</Filter>

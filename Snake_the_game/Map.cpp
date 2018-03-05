@@ -26,14 +26,14 @@ void Map::load() {
 
 void Map::update(const sf::Time& elapsed) {
 	
-	m_snake->tick(elapsed);
+	m_snake->updateTimer(elapsed);
 
 	if(!m_snake->isAlive()) {
 		load();
 		return;
 	}
 
-	if (m_snake->hasExpired()) {
+	if (m_snake->isTimerExpired()) {
 		for (auto& object : m_staticObjects) {
 			m_snake->reactOn(*object);
 		}
@@ -46,13 +46,13 @@ void Map::update(const sf::Time& elapsed) {
 			m_snake->move();
 		}
 
-		m_snake->reset();
+		m_snake->resetTimer();
 		draw();
 	}
 
 	for (auto& object : m_dynamicObjects) {
-		object->tick(elapsed);
-		if (object->hasExpired()) {
+		object->updateTimer(elapsed);
+		if (object->isTimerExpired()) {
 			object->move();
 			m_snake->reactOn(*object);
 
@@ -63,9 +63,8 @@ void Map::update(const sf::Time& elapsed) {
 				}
 			}
 
-			object->reset();
+			object->resetTimer();
 			draw();
-
 		}
 	}
 

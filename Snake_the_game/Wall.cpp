@@ -1,6 +1,7 @@
 #include "Wall.h"
 #include "Draw_config.h"
 #include "Snake.h"
+#include "CircularSaw.h"
 
 Wall::Wall(const Point& p) : StaticObject(p) {}
 
@@ -19,5 +20,14 @@ bool Wall::affect(Snake& s) {
 		s.die();
 		return true;
 	}
+	return false;
+}
+
+bool Wall::affect(CircularSaw& s) {
+	if(s.pos == this->pos) {
+		s.changeDirection();
+		return true;
+	}
+
 	return false;
 }

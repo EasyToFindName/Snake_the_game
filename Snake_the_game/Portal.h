@@ -18,6 +18,7 @@ public: //Drawable implementation
 	virtual void draw(sf::RenderWindow& w) const override;
 public: //Reactor implementation
 	virtual bool affect(Snake&) override;
+	virtual bool affect(CircularSaw&) override;
 
 private:
 	Portal* m_exitPortal;

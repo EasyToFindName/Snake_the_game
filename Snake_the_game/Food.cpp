@@ -1,5 +1,7 @@
 #include "Food.h"
 #include "Draw_config.h"
+
+#include "CircularSaw.h"
 #include "Snake.h"
 
 Food::Food(const Point& p) : StaticObject(p) {
@@ -23,5 +25,14 @@ bool Food::affect(Snake& s) {
 		return true;
 	}
 
+	return false;
+}
+
+bool Food::affect(CircularSaw& saw) {
+	if(saw.pos == this->pos) {
+		pos = Point::NO_POINT;
+		saw.changeDirection();
+		return true;
+	}
 	return false;
 }

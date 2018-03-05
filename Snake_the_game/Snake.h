@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Timer.h"
+#include "DynamicObject.h"
 #include "Point.h"
 #include "Direction.h"
 #include "Interfaces.h"
@@ -8,22 +8,21 @@
 #include <SFML/Graphics.hpp>
 #include <list>
 
+class CircularSaw;
+
 //Snake representation using a list
 //Snake's head in front of the list and snake's tail in back of the list
 
 class Snake: 
-	public Drawable, 
-	public Controllable,
-	public Movable,
-	public Reactable,
-	public Timer
+	public DynamicObject,
+	public Controllable
 {
 public:
 	using SnakeBody = std::list<Point>;
 public:
 	
 	Snake(const Point& startPoint, const Direction::Dir startDir, int size,
-		  const Timer& t);
+		  const sf::Time& t);
 
 	//changes direction. 
 	//couldn't change direction to the opposite
@@ -57,13 +56,18 @@ public:
 	void dissect(SnakeBody::const_iterator& position);
 public: //reactable implementation
 	virtual bool reactOn(Reactor&) override;
+public: //reactor implementation
+	virtual bool affect(Snake& s) override;
+	virtual bool affect(CircularSaw& saw) override;
 public: //movable implementation
 	virtual bool move() override;
 public: //drawable implementation
 	virtual void draw(sf::RenderWindow& window) const override;
 public: //controllable implementation
-	//makes snake's timer expired to instatly update it
+		//makes snake's timer expired to instatly update it	
 	virtual bool keyPressed(const sf::Keyboard::Key&) override;
+
+
 protected:
 	//checks if snake's next head position coolides body
 	bool checkSelfCollision() const;

@@ -1,10 +1,12 @@
 #include "Snake.h"
+#include "CircularSaw.h"
+
 #include "Draw_config.h"
 
-Snake::Snake(const Point& startPoint, const Direction::Dir startDir, int size, const Timer& t)
+Snake::Snake(const Point& startPoint, const Direction::Dir startDir, int size, const sf::Time& t)
 			 :m_dir(startDir),
 			  m_isAlive(true),
-			  Timer(t)			 
+			  DynamicObject(t, startPoint)			 
 {
 	for (int i = 0; i < size; ++i) {
 		m_body.push_back(startPoint + m_dir.to_point().reversed() * i);
@@ -75,11 +77,33 @@ void Snake::dissect(SnakeBody::const_iterator& position) {
 	m_remains = remains;
 }
 
+bool Snake::affect(Snake& s) {
+	if(&s != this) {
+		for(auto it = s.body().begin(); it != s.body().end(); ++it) {
+			if(*it == this->nextHeadPos()) {
+				s.dissect(it);
+				return true;
+			}
+		}
+	}
+
+	return false;
+}
+
+bool Snake::affect(CircularSaw& saw) {
+	if(head() == saw.pos || nextHeadPos() == saw.pos) {
+		die();
+		return true;
+	}
+	return false;
+}
+
 bool Snake::move() {
 	if (checkSelfCollision() == false) {
 		m_body.push_front(m_body.front() + m_dir.to_point());
 		m_tail = m_body.back();
 		m_body.pop_back();
+		pos = head();
 		return true;
 	}
 	die();
@@ -111,8 +135,7 @@ void Snake::setHeadY(int y) {
 	m_body.front().y(y);
 }
 
-bool Snake::isChopped() const
-{
+bool Snake::isChopped() const {
 	return !m_remains.empty();
 }
 
@@ -126,26 +149,34 @@ bool Snake::keyPressed(const sf::Keyboard::Key& key) {
 	switch (key) {
 		case sf::Keyboard::W:
 		case sf::Keyboard::Up:
-			makeExpired();
-			return changeDir(Direction::UP);
+			if(changeDir(Direction::UP)) {
+				makeTimerExpired();
+				return true;
+			}
 			
 
 		case sf::Keyboard::S:
 		case sf::Keyboard::Down:
-			makeExpired();
-			return changeDir(Direction::DOWN);
+			if(changeDir(Direction::DOWN)) {
+				makeTimerExpired();
+				return true;
+			}
 		
 
 		case sf::Keyboard::D:
 		case sf::Keyboard::Right:
-			makeExpired();
-			return changeDir(Direction::RIGHT);
+			if(changeDir(Direction::RIGHT)) {
+				makeTimerExpired();
+				return true;
+			}
 		
 
 		case sf::Keyboard::A:
 		case sf::Keyboard::Left:
-			makeExpired();
-			return changeDir(Direction::LEFT);
+			if(changeDir(Direction::LEFT)) {
+				makeTimerExpired();
+				return true;
+			}
 			
 		default:
 			return false;

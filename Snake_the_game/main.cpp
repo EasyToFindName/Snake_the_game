@@ -24,6 +24,13 @@ std::vector<std::unique_ptr<StaticObject>> generateLevel1(unsigned width, unsign
 	mo.push_back(std::move(p1));
 	mo.push_back(std::move(p2));
 
+	p1.reset(new Portal(Point(width - 5, 5)));
+	p2.reset(new Portal(Point(5, height - 5)));
+	p1->connectWith(*p2);
+
+	mo.push_back(std::move(p1));
+	mo.push_back(std::move(p2));
+
 	Point mapCenter = Point((width - 2) / 2, (height - 2) / 2);
 		
 	for (int x = mapCenter.x() - 8; x <= mapCenter.x() + 8; ++x) {

@@ -1,4 +1,5 @@
 #include "Portal.h"
+#include "CircularSaw.h"
 
 #include "Draw_config.h"
 #include "Snake.h"
@@ -42,6 +43,15 @@ bool Portal::affect(Snake& s) {
 		s.move();
 		s.setHeadX(outPos.x()), s.setHeadY(outPos.y());
 	
+		return true;
+	}
+
+	return false;
+}
+
+bool Portal::affect(CircularSaw& s) {
+	if(s.pos == this->pos) {
+		s.pos = this->pos;
 		return true;
 	}
 
