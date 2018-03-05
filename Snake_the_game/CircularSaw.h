@@ -6,8 +6,6 @@ class Map;
 class CircularSaw : public DynamicObject {
 public:
 	CircularSaw(const Point& from, const Point& to, const sf::Time& speed = sf::milliseconds(150));
-public: //Updatable implementation
-	virtual bool update(const sf::Time& dt) override;
 public: //Movable implementation
 	virtual bool move() override;
 public: //Drawable implementation

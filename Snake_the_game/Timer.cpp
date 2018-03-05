@@ -1,28 +1,21 @@
 #include "Timer.h"
 
-Timer::Timer(const sf::Time& period) : m_period(period), m_timePassed(sf::Time::Zero) {
-
+Timer::Timer(const sf::Time & period) : m_period(period), m_timePassed(sf::Time::Zero) {
+	
 }
 
-void Timer::update(const sf::Time& deltaTime) {
-	m_timePassed += deltaTime;
-
-	if (m_timePassed > m_period) {
-		m_timePassed = sf::Time::Zero;
-		notify();
-	}
+void Timer::tick(const sf::Time& dt) {
+	m_timePassed += dt;
 }
 
-void Timer::attach(Updatable* obj) {
-	m_subscribers.insert(obj);
+void Timer::reset() {
+	m_timePassed = sf::Time::Zero;
 }
 
-void Timer::detach(Updatable* obj) {
-	m_subscribers.erase(obj);
+bool Timer::hasExpired() const {
+	return m_timePassed >= m_period;
 }
 
-void Timer::notify() {
-	for (auto& obj : m_subscribers) {
-		obj->update();
-	}
+void Timer::makeExpired() {
+	m_timePassed = m_period;
 }

@@ -49,11 +49,11 @@
     <Filter Include="BaseObjects\DynamicObject">
       <UniqueIdentifier>{319819b2-2d57-4c28-9712-3a7bf4ff8ca9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="BaseObjects\Updatable">
-      <UniqueIdentifier>{88111446-a9c5-4d72-8dfc-425837a88ecf}</UniqueIdentifier>
-    </Filter>
     <Filter Include="GameObjects\CircularSaw">
       <UniqueIdentifier>{218b9ad0-2a9f-47f5-8ccc-8474c515b940}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Basics\Timer">
+      <UniqueIdentifier>{cb4e561a-0710-44f9-b54d-a0de766f575a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -90,11 +90,11 @@
     <ClCompile Include="DynamicObject.cpp">
       <Filter>BaseObjects\DynamicObject</Filter>
     </ClCompile>
-    <ClCompile Include="Updatable.cpp">
-      <Filter>BaseObjects\Updatable</Filter>
-    </ClCompile>
     <ClCompile Include="CircularSaw.cpp">
       <Filter>GameObjects\CircularSaw</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>Basics\Timer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -134,11 +134,11 @@
     <ClInclude Include="DynamicObject.h">
       <Filter>BaseObjects\DynamicObject</Filter>
     </ClInclude>
-    <ClInclude Include="Updatable.h">
-      <Filter>BaseObjects\Updatable</Filter>
-    </ClInclude>
     <ClInclude Include="CircularSaw.h">
       <Filter>GameObjects\CircularSaw</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>Basics\Timer</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

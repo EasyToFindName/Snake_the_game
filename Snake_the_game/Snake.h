@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Updatable.h"
+#include "Timer.h"
 #include "Point.h"
 #include "Direction.h"
 #include "Interfaces.h"
@@ -16,13 +16,14 @@ class Snake:
 	public Controllable,
 	public Movable,
 	public Reactable,
-	public Updatable
+	public Timer
 {
 public:
 	using SnakeBody = std::list<Point>;
 public:
 	
-	Snake(const Point& startPoint, const Direction::Dir startDir, int size);
+	Snake(const Point& startPoint, const Direction::Dir startDir, int size,
+		  const Timer& t);
 
 	//changes direction. 
 	//couldn't change direction to the opposite
@@ -61,9 +62,8 @@ public: //movable implementation
 public: //drawable implementation
 	virtual void draw(sf::RenderWindow& window) const override;
 public: //controllable implementation
+	//makes snake's timer expired to instatly update it
 	virtual bool keyPressed(const sf::Keyboard::Key&) override;
-public:
-	virtual bool update(const sf::Time& deltaTime) override;
 protected:
 	//checks if snake's next head position coolides body
 	bool checkSelfCollision() const;

@@ -1,20 +1,23 @@
 #pragma once
-#include "Interfaces.h"
+
 #include <SFML/System.hpp>
-#include <set>
-class Timer : public Notifier {
+
+class Timer {
 public:
 	Timer(const sf::Time& period);
+	
+	//adds dt to timePassed
+	void tick(const sf::Time& dt);
+	
+	//timePassed = 0
+	void reset();
 
-	void update(const sf::Time& deltaTime);
-public: //Notifier implementation
-	virtual void attach(Updatable*) override;
-	virtual void detach(Updatable*) override;
-	virtual void notify() override;
+	//returns true if timePassed > period
+	bool hasExpired() const;
+
+	//timePassed = period;
+	void makeExpired();
 private:
-	sf::Time m_timePassed;
 	sf::Time m_period;
-
-	std::set<Updatable*> m_subscribers;
+	sf::Time m_timePassed;
 };
-

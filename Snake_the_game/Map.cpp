@@ -19,19 +19,21 @@ Map::Map(sf::RenderWindow& window, unsigned width, unsigned height,
 }
 
 void Map::load() {
-	m_snake.reset(new Snake(Point(8, 2), Direction::RIGHT, 6));
+	m_snake.reset(new Snake(Point(8, 2), Direction::RIGHT, 3, sf::milliseconds(300)));
 	m_food.reset(new Food);
 	m_food->pos = generateFoodPos();
 }
 
 void Map::update(const sf::Time& elapsed) {
 	
+	m_snake->tick(elapsed);
+
 	if(!m_snake->isAlive()) {
 		load();
 		return;
 	}
 
-	if (m_snake->updateTimer(elapsed)) {
+	if (m_snake->hasExpired()) {
 		for (auto& object : m_staticObjects) {
 			m_snake->reactOn(*object);
 		}
@@ -44,12 +46,14 @@ void Map::update(const sf::Time& elapsed) {
 			m_snake->move();
 		}
 
+		m_snake->reset();
 		draw();
 	}
 
 	for (auto& object : m_dynamicObjects) {
-		if (object->update(elapsed)) {
-			
+		object->tick(elapsed);
+		if (object->hasExpired()) {
+			object->move();
 			m_snake->reactOn(*object);
 
 			if (m_snake->isChopped()) {
@@ -59,6 +63,7 @@ void Map::update(const sf::Time& elapsed) {
 				}
 			}
 
+			object->reset();
 			draw();
 
 		}
@@ -67,8 +72,8 @@ void Map::update(const sf::Time& elapsed) {
 }
 
 void Map::catchInput(const sf::Keyboard::Key& k) {
-	if (m_snake->isAlive() && m_snake->keyPressed(k)) {
-		m_snake->resetTimer();
+	if (m_snake->isAlive()) {
+		m_snake->keyPressed(k);
 	}
 }
 

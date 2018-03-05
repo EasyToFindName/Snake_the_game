@@ -1,10 +1,10 @@
 #include "Snake.h"
 #include "Draw_config.h"
 
-Snake::Snake(const Point& startPoint, const Direction::Dir startDir, int size)
+Snake::Snake(const Point& startPoint, const Direction::Dir startDir, int size, const Timer& t)
 			 :m_dir(startDir),
 			  m_isAlive(true),
-			  Updatable(sf::milliseconds(300))			 
+			  Timer(t)			 
 {
 	for (int i = 0; i < size; ++i) {
 		m_body.push_back(startPoint + m_dir.to_point().reversed() * i);
@@ -126,35 +126,30 @@ bool Snake::keyPressed(const sf::Keyboard::Key& key) {
 	switch (key) {
 		case sf::Keyboard::W:
 		case sf::Keyboard::Up:
+			makeExpired();
 			return changeDir(Direction::UP);
 			
 
 		case sf::Keyboard::S:
 		case sf::Keyboard::Down:
+			makeExpired();
 			return changeDir(Direction::DOWN);
 		
 
 		case sf::Keyboard::D:
 		case sf::Keyboard::Right:
+			makeExpired();
 			return changeDir(Direction::RIGHT);
 		
 
 		case sf::Keyboard::A:
 		case sf::Keyboard::Left:
+			makeExpired();
 			return changeDir(Direction::LEFT);
 			
-
 		default:
 			return false;
 	}
-}
-
-bool Snake::update(const sf::Time & deltaTime) {
-	if (updateTimer(deltaTime)) {
-		move();
-		return true;
-	}
-	return false;
 }
 
 bool Snake::reactOn(Reactor& r) {

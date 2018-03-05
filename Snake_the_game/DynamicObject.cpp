@@ -1,6 +1,6 @@
 #include "DynamicObject.h"
 
 
-DynamicObject::DynamicObject(const sf::Time& period, const Point& p) : Updatable(period), StaticObject(p) {
+DynamicObject::DynamicObject(const Timer& period, const Point& p) : Timer(period), StaticObject(p) {
 
 }

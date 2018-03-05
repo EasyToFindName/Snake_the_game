@@ -1,14 +1,13 @@
 #pragma once
 
-#include "Updatable.h"
+#include "Timer.h"
 #include "StaticObject.h"
 class DynamicObject: 
 	public StaticObject,
 	public Movable,
-	public Updatable
+	public Timer
 {
 public:
-	DynamicObject(const sf::Time& period, const Point& p = Point::NO_POINT);
-
+	DynamicObject(const Timer& period, const Point& p = Point::NO_POINT);
 };
 
