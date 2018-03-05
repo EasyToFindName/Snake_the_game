@@ -14,7 +14,6 @@ CircularSaw::CircularSaw(const Point& from, const Point&to, const sf::Time& spee
 	
 }
 
-
 bool CircularSaw::move() {
 	if(pos == m_to) {
 		changeDirection();

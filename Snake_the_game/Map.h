@@ -1,49 +1,48 @@
 #pragma once
-#include "Food.h"
-#include "Wall.h"
-#include "Snake.h"
-#include "Interfaces.h"
+#include "Point.h"
 #include "RandomGenerator.h"
-#include "Portal.h"
-#include "CircularSaw.h"
-#include <SFML\System.hpp>
-#include <SFML\Window.hpp>
-#include <memory>
-#include <random>
+#include "StaticObject.h"
+#include "DynamicObject.h"
 
-//represents level
-//should be refactored
+#include <SFML\Window.hpp>
+#include <vector>
+#include <memory>
 
 class Map {
-	static constexpr unsigned int _GAME_UPDATE_RATE = 300; //ms
-	static constexpr unsigned int GAME_OVER_DELAY = 1000; //ms
+	friend class MapBuilder;
+	//constructor for map builder
+	Map(sf::RenderWindow& w, unsigned width, unsigned height);
 public:
-	//Map(unsigned width, unsigned height);
 	Map(sf::RenderWindow& window, unsigned width, unsigned height,
 		std::vector<std::unique_ptr<StaticObject>>&& mapObjects,
 		std::vector<std::unique_ptr<DynamicObject>>&& dynObjects);
 
-	void update(const sf::Time& elapsed);
+	Map(Map&& m);
+
+	//static objects should be drawn by reversed interaction priority
+	//portal > food > wall
 	void draw() const;
 
-	void catchInput(const sf::Keyboard::Key&);
+	Point generateStaticPos() const;
 
-	void load();
-protected:
-	Point generateFoodPos();
-	bool reflectSnake();
+	const std::vector<std::unique_ptr<StaticObject>>& iterateStatics();
+	const std::vector<std::unique_ptr<DynamicObject>>& iterateDynamics();
+	const std::vector<std::unique_ptr<StaticObject>>& iterateTemporaries();
+	const std::vector<Snake*>& iterateSnakes();
 private:
-	std::unique_ptr<Snake> m_snake;
-	std::unique_ptr<Food> m_food;
-	std::vector<std::unique_ptr<StaticObject>> m_staticObjects;
-	std::vector<std::unique_ptr<DynamicObject>> m_dynamicObjects;
 	sf::RenderWindow& m_window;
 
-	RandomGenerator m_rand;
-	sf::Time m_elapsedTime;
 	unsigned m_width;
 	unsigned m_height;
-private:
-	static const sf::Time GAME_UPDATE_RATE;
+
+	//static objects should be placed by interaction priority
+	//wall > food > portal etc
+	std::vector<Snake*> m_snakes;
+	std::vector<std::unique_ptr<StaticObject>> m_staticObjects;
+	std::vector<std::unique_ptr<DynamicObject>> m_dynamicObjects;
+	
+	std::vector<std::unique_ptr<StaticObject>> m_temporaryObjects;
+
+	mutable RandomGenerator m_rand;
 };
 

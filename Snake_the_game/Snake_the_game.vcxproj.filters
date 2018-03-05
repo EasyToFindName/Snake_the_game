@@ -17,24 +17,8 @@
     <Filter Include="Basics\RandomGenerator">
       <UniqueIdentifier>{20d3ddfc-b6a3-454e-b2f2-7ccdbc53cc36}</UniqueIdentifier>
     </Filter>
-    <Filter Include="GameObjects">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="GameObjects\Snake">
-      <UniqueIdentifier>{2e6195cc-da22-438d-8aaf-9bef0e1885d4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="GameObjects\Food">
-      <UniqueIdentifier>{d8033544-f240-4208-bdb5-b6659da71dde}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="GameObjects\Wall">
-      <UniqueIdentifier>{5e99cbf5-f95e-4f38-a9b9-426425934199}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Modules">
       <UniqueIdentifier>{e69db2d4-b052-4dcc-9128-581b074df30d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="GameObjects\Portal">
-      <UniqueIdentifier>{07716ce9-9dd5-4fd6-bd1b-4d0fa3104d57}</UniqueIdentifier>
     </Filter>
     <Filter Include="BaseObjects">
       <UniqueIdentifier>{4cac112e-a624-43c4-8e44-219f83820c29}</UniqueIdentifier>
@@ -45,15 +29,49 @@
     <Filter Include="BaseObjects\DynamicObject">
       <UniqueIdentifier>{319819b2-2d57-4c28-9712-3a7bf4ff8ca9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="GameObjects\CircularSaw">
-      <UniqueIdentifier>{218b9ad0-2a9f-47f5-8ccc-8474c515b940}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Basics\Timer">
       <UniqueIdentifier>{cb4e561a-0710-44f9-b54d-a0de766f575a}</UniqueIdentifier>
     </Filter>
     <Filter Include="------------ Entry_point">
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Modules\LevelController">
+      <UniqueIdentifier>{1665d8bc-191e-4eb4-bec0-1febe8101282}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Modules\Map">
+      <UniqueIdentifier>{e84dcdcf-896e-4c8e-ad68-900c71bd05c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Modules\MapBuilder">
+      <UniqueIdentifier>{715ab3cf-8a4f-486a-bf0c-775e989fa50d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PackedIncludes">
+      <UniqueIdentifier>{a1792357-d768-4079-ae18-7b2217fdb0fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LevelObjects">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="LevelObjects\Static">
+      <UniqueIdentifier>{ac1ba593-fc5b-4fe3-b6c2-701dcaf88503}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LevelObjects\Dynamic">
+      <UniqueIdentifier>{193f8ce4-b4c6-48b2-962b-a993cd68b194}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LevelObjects\Static\Portal">
+      <UniqueIdentifier>{07716ce9-9dd5-4fd6-bd1b-4d0fa3104d57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LevelObjects\Static\Wall">
+      <UniqueIdentifier>{5e99cbf5-f95e-4f38-a9b9-426425934199}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LevelObjects\Static\Food">
+      <UniqueIdentifier>{d8033544-f240-4208-bdb5-b6659da71dde}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LevelObjects\Dynamic\Snake">
+      <UniqueIdentifier>{2e6195cc-da22-438d-8aaf-9bef0e1885d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LevelObjects\Dynamic\CircularSaw">
+      <UniqueIdentifier>{218b9ad0-2a9f-47f5-8ccc-8474c515b940}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -67,22 +85,19 @@
       <Filter>Basics\RandomGenerator</Filter>
     </ClCompile>
     <ClCompile Include="Snake.cpp">
-      <Filter>GameObjects\Snake</Filter>
+      <Filter>LevelObjects\Dynamic\Snake</Filter>
     </ClCompile>
     <ClCompile Include="Food.cpp">
-      <Filter>GameObjects\Food</Filter>
+      <Filter>LevelObjects\Static\Food</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>------------ Entry_point</Filter>
     </ClCompile>
     <ClCompile Include="Wall.cpp">
-      <Filter>GameObjects\Wall</Filter>
-    </ClCompile>
-    <ClCompile Include="Map.cpp">
-      <Filter>Modules</Filter>
+      <Filter>LevelObjects\Static\Wall</Filter>
     </ClCompile>
     <ClCompile Include="Portal.cpp">
-      <Filter>GameObjects\Portal</Filter>
+      <Filter>LevelObjects\Static\Portal</Filter>
     </ClCompile>
     <ClCompile Include="StaticObject.cpp">
       <Filter>BaseObjects\StaticObject</Filter>
@@ -91,10 +106,19 @@
       <Filter>BaseObjects\DynamicObject</Filter>
     </ClCompile>
     <ClCompile Include="CircularSaw.cpp">
-      <Filter>GameObjects\CircularSaw</Filter>
+      <Filter>LevelObjects\Dynamic\CircularSaw</Filter>
     </ClCompile>
     <ClCompile Include="Timer.cpp">
       <Filter>Basics\Timer</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelController.cpp">
+      <Filter>Modules\LevelController</Filter>
+    </ClCompile>
+    <ClCompile Include="Map.cpp">
+      <Filter>Modules\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="MapBuilder.cpp">
+      <Filter>Modules\MapBuilder</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -114,19 +138,16 @@
       <Filter>Basics</Filter>
     </ClInclude>
     <ClInclude Include="Snake.h">
-      <Filter>GameObjects\Snake</Filter>
+      <Filter>LevelObjects\Dynamic\Snake</Filter>
     </ClInclude>
     <ClInclude Include="Food.h">
-      <Filter>GameObjects\Food</Filter>
+      <Filter>LevelObjects\Static\Food</Filter>
     </ClInclude>
     <ClInclude Include="Wall.h">
-      <Filter>GameObjects\Wall</Filter>
-    </ClInclude>
-    <ClInclude Include="Map.h">
-      <Filter>Modules</Filter>
+      <Filter>LevelObjects\Static\Wall</Filter>
     </ClInclude>
     <ClInclude Include="Portal.h">
-      <Filter>GameObjects\Portal</Filter>
+      <Filter>LevelObjects\Static\Portal</Filter>
     </ClInclude>
     <ClInclude Include="StaticObject.h">
       <Filter>BaseObjects\StaticObject</Filter>
@@ -135,10 +156,37 @@
       <Filter>BaseObjects\DynamicObject</Filter>
     </ClInclude>
     <ClInclude Include="CircularSaw.h">
-      <Filter>GameObjects\CircularSaw</Filter>
+      <Filter>LevelObjects\Dynamic\CircularSaw</Filter>
     </ClInclude>
     <ClInclude Include="Timer.h">
       <Filter>Basics\Timer</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelController.h">
+      <Filter>Modules\LevelController</Filter>
+    </ClInclude>
+    <ClInclude Include="Map.h">
+      <Filter>Modules\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="MapBuilder.h">
+      <Filter>Modules\MapBuilder</Filter>
+    </ClInclude>
+    <ClInclude Include="StaticObjects.h">
+      <Filter>PackedIncludes</Filter>
+    </ClInclude>
+    <ClInclude Include="declStaticObjects.h">
+      <Filter>PackedIncludes</Filter>
+    </ClInclude>
+    <ClInclude Include="DynamicObjects.h">
+      <Filter>PackedIncludes</Filter>
+    </ClInclude>
+    <ClInclude Include="declDynamicObjects.h">
+      <Filter>PackedIncludes</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelObjects.h">
+      <Filter>PackedIncludes</Filter>
+    </ClInclude>
+    <ClInclude Include="declLevelObjects.h">
+      <Filter>PackedIncludes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

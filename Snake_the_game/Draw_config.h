@@ -4,6 +4,13 @@
 //Stores information about how to draw the game
 
 namespace DrawConfig {
+
+	const unsigned CIRCULAR_SAW_DRAW_PRIORITY = 1;
+	const unsigned PORTAL_DRAW_PRIORITY       = 2;
+	const unsigned FOOD_DRAW_PRIORITY         = 3;
+	const unsigned WALL_DRAW_PRIORITY         = 4;
+	const unsigned SNAKE_DRAW_PRIORITY        = 5;
+
 	//one cell size in px
 	//should be a multiple of width and height of the window
 	constexpr int SCALE = 20; 

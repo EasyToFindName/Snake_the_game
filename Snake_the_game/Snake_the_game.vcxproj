@@ -135,8 +135,10 @@
     <ClCompile Include="Direction.cpp" />
     <ClCompile Include="DynamicObject.cpp" />
     <ClCompile Include="Food.cpp" />
+    <ClCompile Include="LevelController.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MapBuilder.cpp" />
     <ClCompile Include="StaticObject.cpp" />
     <ClCompile Include="Point.cpp" />
     <ClCompile Include="Portal.cpp" />
@@ -147,18 +149,26 @@
     <ClCompile Include="Wall.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="declDynamicObjects.h" />
+    <ClInclude Include="declLevelObjects.h" />
+    <ClInclude Include="declStaticObjects.h" />
     <ClInclude Include="Direction.h" />
     <ClInclude Include="Draw_config.h" />
     <ClInclude Include="DynamicObject.h" />
+    <ClInclude Include="DynamicObjects.h" />
     <ClInclude Include="Food.h" />
+    <ClInclude Include="LevelController.h" />
+    <ClInclude Include="LevelObjects.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="Interfaces.h" />
+    <ClInclude Include="MapBuilder.h" />
     <ClInclude Include="StaticObject.h" />
     <ClInclude Include="Point.h" />
     <ClInclude Include="Portal.h" />
     <ClInclude Include="RandomGenerator.h" />
     <ClInclude Include="CircularSaw.h" />
     <ClInclude Include="Snake.h" />
+    <ClInclude Include="StaticObjects.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="Wall.h" />
   </ItemGroup>
