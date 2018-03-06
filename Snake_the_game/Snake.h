@@ -24,6 +24,7 @@ public:
 	Snake(const Point& startPoint, const Direction::Dir startDir, int size,
 		  const sf::Time& t);
 
+	
 	//changes direction. 
 	//couldn't change direction to the opposite
 	//if direction changed returns true
@@ -66,6 +67,8 @@ public: //drawable implementation
 public: //controllable implementation
 		//makes snake's timer expired to instatly update it	
 	virtual bool keyPressed(const sf::Keyboard::Key&) override;
+public: //static object postprocessing function implementation
+	virtual void postProcessing(Map& m) override;
 
 
 protected:

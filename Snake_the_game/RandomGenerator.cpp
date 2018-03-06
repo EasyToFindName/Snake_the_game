@@ -10,3 +10,12 @@ Point RandomGenerator::generatePoint(Point&& lower_bound, Point&& upper_bound) {
 
 	return Point(x_axis(m_randomEngine), y_axis(m_randomEngine));
 }
+
+int RandomGenerator::generateInt(int upperBound) {
+	return generateInt(0, upperBound);
+}
+
+int RandomGenerator::generateInt(int lowerBound, int upperBound) {
+	std::uniform_int_distribution<int> dist(lowerBound, upperBound);
+	return dist(m_randomEngine);
+}

@@ -22,8 +22,11 @@ public:
 	//static objects should be drawn by reversed interaction priority
 	//portal > food > wall
 	void draw() const;
-
+	
+	//returns random Coord of not occupied cell on a map
 	Point generateStaticPos() const;
+
+	void addTempObj(std::unique_ptr<StaticObject>&& obj);
 
 	//accessors which allow change elements in vectors but no vectors themselves
 	const std::vector<std::unique_ptr<StaticObject>>& iterateStatics();
@@ -41,8 +44,9 @@ private:
 	std::vector<Snake*> m_snakes;
 	std::vector<std::unique_ptr<StaticObject>> m_staticObjects;
 	std::vector<std::unique_ptr<DynamicObject>> m_dynamicObjects;
-	
 	std::vector<std::unique_ptr<StaticObject>> m_temporaryObjects;
+	
+	std::vector<Point> m_freeCells;
 
 	mutable RandomGenerator m_rand;
 };

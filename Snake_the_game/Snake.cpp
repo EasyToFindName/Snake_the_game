@@ -1,5 +1,7 @@
 #include "Snake.h"
 #include "CircularSaw.h"
+#include "Food.h"
+#include "Map.h"
 
 #include "Draw_config.h"
 
@@ -159,7 +161,6 @@ bool Snake::keyPressed(const sf::Keyboard::Key& key) {
 			}
 		break;
 		
-
 		case sf::Keyboard::D:
 		case sf::Keyboard::Right:
 			if(changeDir(Direction::RIGHT)) {
@@ -185,6 +186,17 @@ bool Snake::keyPressed(const sf::Keyboard::Key& key) {
 		break;
 		default:
 			return false;
+	}
+}
+
+void Snake::postProcessing(Map& m) {
+	
+	if(isChopped()) {
+		auto remains = dropRemains();
+
+		for(auto& block : remains) {
+			m.addTempObj(std::unique_ptr<Food>(new Food(block)));
+		}
 	}
 }
 

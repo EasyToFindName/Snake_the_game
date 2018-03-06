@@ -26,7 +26,8 @@ void LevelController::run(const sf::Time& elapsed) {
 			current->resetTimer();
 
 			for(auto& staticObj : m_map.iterateStatics()) {
-				current->reactOn(*staticObj);
+				if(current->reactOn(*staticObj))
+					staticObj->postProcessing(m_map);
 			}
 
 			for(auto& tempObj : m_map.iterateTemporaries()) {
@@ -35,6 +36,8 @@ void LevelController::run(const sf::Time& elapsed) {
 			
 			for(auto& other : m_map.iterateDynamics()) {
 				current->reactOn(*other);
+				//if(current->reactOn(*other))
+					other->postProcessing(m_map);
 			}
 		}
 	}

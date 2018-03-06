@@ -9,6 +9,10 @@ public:
 	//generates random point in rectangle defined by
 	//lower_bound(inclusive) and upper_bound(exclusive)
 	Point generatePoint(Point&& lower_bound, Point&& upper_bound);
+
+
+	int generateInt(int upperBound);
+	int generateInt(int lowerBound, int upperBound);
 private:
 	std::random_device m_randomDevice;
 	std::mt19937 m_randomEngine;

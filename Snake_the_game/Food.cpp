@@ -8,6 +8,12 @@ Food::Food(const Point& p) : StaticObject(p) {
 
 }
 
+void Food::postProcessing(Map& m) {
+	if(pos == Point::NO_POINT) {
+		pos = m.generateStaticPos();
+	}
+}
+
 void Food::draw(sf::RenderWindow& window) const {
 	sf::RectangleShape rect(sf::Vector2f(DrawConfig::SCALE, DrawConfig::SCALE));
 	rect.setFillColor(DrawConfig::FOOD_COLOR);
@@ -19,7 +25,7 @@ void Food::draw(sf::RenderWindow& window) const {
 }
 
 bool Food::affect(Snake& s) {
-	if (s.nextHeadPos() == pos) {
+	if (s.head() == pos) {
 		s.eat();
 		pos = Point::NO_POINT;
 		return true;

@@ -18,10 +18,18 @@ void Map::draw() const {
 	for(auto& i : m_staticObjects) {
 		i->draw(m_window);
 	}
+
+	for(auto& i : m_temporaryObjects) {
+		i->draw(m_window);
+	}
+}
+
+void Map::addTempObj(std::unique_ptr<StaticObject>&& obj) {
+	m_temporaryObjects.push_back(std::move(obj));
 }
 
 Point Map::generateStaticPos() const {
-	return m_rand.generatePoint(Point(0, 0), Point(m_width, m_height));
+	return m_freeCells.at(m_rand.generateInt(m_freeCells.size() - 1));
 }
 
 const std::vector<std::unique_ptr<StaticObject>>& Map::iterateStatics() {

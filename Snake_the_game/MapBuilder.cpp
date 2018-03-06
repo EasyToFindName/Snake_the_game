@@ -65,12 +65,31 @@ Map MapBuilder::construct() {
 		addWall(Point(m_width - 1, y));
 	}
 
+	for(int i = 0; i < m_width; ++i) {
+		for(int j = 0; j < m_height; ++j) {
+			Point p = Point(i, j);
+			
+			bool flag = true;
+			for(auto& wall : m_walls) {
+				if(wall->pos == p) {
+					flag = false;
+					break;
+				}
+			}
+
+			if(flag) {
+				ret.m_freeCells.push_back(p);
+			}
+		}
+	}
+
 	//constructing map
 	for(auto& i : m_walls) {
 		ret.m_staticObjects.push_back(std::move(i));
 	}
 
 	for(auto& i : m_permaFood) {
+		i->pos = ret.generateStaticPos();
 		ret.m_staticObjects.push_back(std::move(i));
 	}
 
@@ -90,6 +109,8 @@ Map MapBuilder::construct() {
 		ret.m_snakes.push_back(i.get());
 		ret.m_dynamicObjects.push_back(std::move(i));
 	}
+
+	
 
 	return ret;
 }

@@ -69,13 +69,19 @@ int main() {
 	MapBuilder builder(window, width, height);
 
 	builder.addPermaFood(1)
+		.addWall(Point(12, 15))
+		.addWall(Point(13, 15))
+		.addWall(Point(14, 15))
+		.addWall(Point(15, 15))
+		.addWall(Point(16, 15))
+		.addWall(Point(17, 15))
 		.addPortal(Point(5, 5), Point(width - 5, height - 5))
 		.addPortal(Point(width - 5, 5), Point(5, height - 5))
 		.addSnake(Snake(Point(3, 3), Direction::RIGHT, 5, sf::milliseconds(300)))
 		.addSaw(CircularSaw(Point(10, 1), Point(10, 12), sf::milliseconds(100)))
 		.addSaw(CircularSaw(Point(10, 12), Point(10, 1), sf::milliseconds(100)))
 		.addSaw(CircularSaw(Point(5, 1), Point(5, 8)))
-		.addSaw(CircularSaw(Point(12, 3), Point(12, 12)));
+		.addSaw(CircularSaw(Point(12, 12), Point(20, 12)));
 	
 	Map m = builder.construct();
 
