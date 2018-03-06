@@ -25,6 +25,7 @@ public:
 
 	Point generateStaticPos() const;
 
+	//accessors which allow change elements in vectors but no vectors themselves
 	const std::vector<std::unique_ptr<StaticObject>>& iterateStatics();
 	const std::vector<std::unique_ptr<DynamicObject>>& iterateDynamics();
 	const std::vector<std::unique_ptr<StaticObject>>& iterateTemporaries();

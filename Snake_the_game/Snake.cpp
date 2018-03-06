@@ -91,11 +91,7 @@ bool Snake::affect(Snake& s) {
 }
 
 bool Snake::affect(CircularSaw& saw) {
-	if(head() == saw.pos || nextHeadPos() == saw.pos) {
-		die();
-		return true;
-	}
-	return false;
+	return saw.affect(*this);
 }
 
 bool Snake::move() {
@@ -153,7 +149,7 @@ bool Snake::keyPressed(const sf::Keyboard::Key& key) {
 				makeTimerExpired();
 				return true;
 			}
-			
+		break;
 
 		case sf::Keyboard::S:
 		case sf::Keyboard::Down:
@@ -161,6 +157,7 @@ bool Snake::keyPressed(const sf::Keyboard::Key& key) {
 				makeTimerExpired();
 				return true;
 			}
+		break;
 		
 
 		case sf::Keyboard::D:
@@ -169,7 +166,7 @@ bool Snake::keyPressed(const sf::Keyboard::Key& key) {
 				makeTimerExpired();
 				return true;
 			}
-		
+		break;
 
 		case sf::Keyboard::A:
 		case sf::Keyboard::Left:
@@ -177,7 +174,15 @@ bool Snake::keyPressed(const sf::Keyboard::Key& key) {
 				makeTimerExpired();
 				return true;
 			}
-			
+		break;
+
+		case sf::Keyboard::Space:
+			m_isAlive = true;
+			for(int i = 0; i < 5 && m_body.size() < 5; ++i) {
+				m_body.push_back(head() + m_dir.to_point().reversed() * i);
+			}
+			return true;
+		break;
 		default:
 			return false;
 	}

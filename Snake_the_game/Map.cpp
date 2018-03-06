@@ -52,3 +52,14 @@ Map::Map(sf::RenderWindow& window, unsigned width, unsigned height,
 
 }
 
+Map::Map(Map&& m) 
+	:m_window(m.m_window),
+	 m_width(m.m_width),
+	 m_height(m.m_height)
+{
+	std::swap(this->m_staticObjects, m.m_staticObjects);
+	std::swap(this->m_dynamicObjects, m.m_dynamicObjects);
+	std::swap(this->m_temporaryObjects, m.m_temporaryObjects);
+	std::swap(this->m_snakes, m.m_snakes);
+}
+

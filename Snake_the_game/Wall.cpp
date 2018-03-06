@@ -24,7 +24,7 @@ bool Wall::affect(Snake& s) {
 }
 
 bool Wall::affect(CircularSaw& s) {
-	if(s.pos == this->pos) {
+	if(s.nextPos() == this->pos) {
 		s.changeDirection();
 		return true;
 	}

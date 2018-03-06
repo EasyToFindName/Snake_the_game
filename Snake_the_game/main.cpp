@@ -65,16 +65,22 @@ int main() {
 	
 	int width = 32;
 	int height = 24;
+	
 	MapBuilder builder(window, width, height);
-
 
 	builder.addPermaFood(1)
 		.addPortal(Point(5, 5), Point(width - 5, height - 5))
 		.addPortal(Point(width - 5, 5), Point(5, height - 5))
-		.addSaw(CircularSaw(Point(15, 1), Point(15, 6), sf::milliseconds(150)));
-
+		.addSnake(Snake(Point(3, 3), Direction::RIGHT, 5, sf::milliseconds(300)))
+		.addSaw(CircularSaw(Point(10, 1), Point(10, 12), sf::milliseconds(100)))
+		.addSaw(CircularSaw(Point(10, 12), Point(10, 1), sf::milliseconds(100)))
+		.addSaw(CircularSaw(Point(5, 1), Point(5, 8)))
+		.addSaw(CircularSaw(Point(12, 3), Point(12, 12)));
+	
 	Map m = builder.construct();
+
 	LevelController game(m);
+	
 	sf::Clock clock;
 
 	window.setVerticalSyncEnabled(true);
@@ -86,7 +92,6 @@ int main() {
 		game.run(std::move(dt));
 
 		while (window.pollEvent(event)) {
-			
 			if (event.type == sf::Event::Closed)
 				window.close();
 			else if (event.type == sf::Event::KeyPressed) {

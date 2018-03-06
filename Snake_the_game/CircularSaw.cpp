@@ -14,11 +14,16 @@ CircularSaw::CircularSaw(const Point& from, const Point&to, const sf::Time& spee
 	
 }
 
+Point CircularSaw::nextPos() const {
+	return pos + m_direction.to_point();
+}
+
 bool CircularSaw::move() {
 	if(pos == m_to) {
 		changeDirection();
 	}
 
+	m_path.insert(pos);
 	pos += m_direction.to_point();
 
 	return true;
@@ -29,26 +34,24 @@ void CircularSaw::draw(sf::RenderWindow& window) const {
 	sf::RectangleShape rect(sf::Vector2f(DrawConfig::SCALE, DrawConfig::SCALE));
 	rect.setFillColor(DrawConfig::SAW_PATH_COLOR);
 
-	Point temp = m_from;
-
-	while(temp != m_to + m_direction.to_point()) {
+	
+	for(auto& temp : m_path) {
 		rect.setPosition(sf::Vector2f(DrawConfig::to_viewport_coord(temp.x()),
 									  DrawConfig::to_viewport_coord(temp.y())));
 
 		window.draw(rect);
-		temp += m_direction.to_point();
 	}
 
 	rect.setFillColor(DrawConfig::SAW_COLOR);
 	rect.setPosition(sf::Vector2f(DrawConfig::to_viewport_coord(pos.x()),
 								  DrawConfig::to_viewport_coord(pos.y()))
-	);
+					);
 
 	window.draw(rect);
 }
 
 bool CircularSaw::affect(Snake& s) {
-	if(s.head() == pos || s.head() == pos + m_direction.to_point()) {
+	if(s.head() == pos || s.head() == nextPos()) {
 		s.die();
 		return true;
 	}
@@ -70,7 +73,7 @@ void CircularSaw::changeDirection() {
 
 bool CircularSaw::affect(CircularSaw& s) {
 	if(&s != this) {
-		if(s.pos == this->pos) {
+		if(s.pos == this->nextPos() || s.pos == this->pos) {
 			this->changeDirection();
 			s.changeDirection();
 		}

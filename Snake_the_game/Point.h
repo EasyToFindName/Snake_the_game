@@ -20,6 +20,7 @@ public:
 	bool operator==(const Point& p) const;
 	bool operator!=(const Point& p) const;
 
+	bool operator<(const Point& p) const;
 	//Returns point multiplied by -1
 	Point reversed() const;
 

@@ -32,7 +32,7 @@ void Portal::draw(sf::RenderWindow& window) const {
 }
 
 bool Portal::affect(Snake& s) {
-	if(s.nextHeadPos() == this->pos) {
+	if(s.head() == this->pos) {
 		/*if(!hasExit()) {
 			s.die();
 			return true;
@@ -42,7 +42,7 @@ bool Portal::affect(Snake& s) {
 
 		s.move();
 		s.setHeadX(outPos.x()), s.setHeadY(outPos.y());
-	
+		s.move();
 		return true;
 	}
 
@@ -51,7 +51,8 @@ bool Portal::affect(Snake& s) {
 
 bool Portal::affect(CircularSaw& s) {
 	if(s.pos == this->pos) {
-		s.pos = this->pos;
+		s.pos = m_exitPortal->pos;
+		s.move();
 		return true;
 	}
 

@@ -13,6 +13,6 @@ public:
 	void catchInput(const sf::Keyboard::Key&);
 private:
 	Map& m_map;
-
+	Snake* m_player;
 }; 
 

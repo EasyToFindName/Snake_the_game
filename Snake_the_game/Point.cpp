@@ -56,6 +56,14 @@ bool Point::operator!=(const Point& p) const {
 	return !(*this == p);
 }
 
+bool Point::operator<(const Point& p) const {
+	if(x() == p.x()) {
+		return y() < p.y();
+	}
+
+	return x() < p.x();
+}
+
 int Point::x() const {
 	return m_x;
 }
