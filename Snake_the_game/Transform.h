@@ -2,10 +2,9 @@
 #include <SFML\Graphics.hpp>
 #include "Component.h"
 
-class Transform : public Component, public sf::Transformable {
+COMPONENT_DERIVED_FROM_CLASS(Transform, sf::Transformable)
 public:
 	Transform(GameObject* gameObject);
 	virtual ~Transform();
 
-	static COMPONENT getID();
-};
+END_COMPONENT

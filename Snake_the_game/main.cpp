@@ -129,7 +129,6 @@ int main() {
 	object->transform()->setPosition(100, 100);
 
 
-
 	while (window.isOpen()) {
 		
 		sf::Event event;

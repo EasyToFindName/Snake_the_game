@@ -2,8 +2,6 @@
 
 class GameObject;
 
-enum class COMPONENT {TRANSFORM, RENDERER, END};
-
 class Component {
 public:
 	Component(GameObject* gameObject);
@@ -14,8 +12,10 @@ public:
 	virtual ~Component() = default;
 
 
-	static COMPONENT getID();
+	virtual unsigned getType() = 0;
 
 protected:
 	GameObject* m_gameObject;
 };
+
+#include "MetaComponent.h"

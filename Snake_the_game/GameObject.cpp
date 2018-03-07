@@ -1,6 +1,6 @@
 #include "GameObject.h"
 
-GameObject::GameObject()
+GameObject::GameObject() : m_components(ComponentType::count())
 {
 	try {
 		m_transform = addComponent<Transform>();

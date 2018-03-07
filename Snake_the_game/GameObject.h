@@ -19,16 +19,16 @@ public:
 	std::shared_ptr<Transform> transform() const;
 
 private:
-	std::vector<std::shared_ptr<Component>> m_components[static_cast<int>(COMPONENT::END)];
+	std::vector<std::vector<std::shared_ptr<Component>>> m_components;
 	std::shared_ptr<Transform> m_transform;
 };
 
 template<typename T>
 std::shared_ptr<T> GameObject::addComponent() throw()
 {
-	unsigned index = static_cast<unsigned>(T::getID());
+	unsigned index = T::getId();
 
-	if (index >= static_cast<unsigned>(COMPONENT::END))
+	if (index >= ComponentType::count())
 		throw std::out_of_range("Out of component list");
 
 	auto component = std::make_shared<T>(this);
@@ -41,9 +41,9 @@ std::shared_ptr<T> GameObject::addComponent() throw()
 template<typename T>
 std::shared_ptr<T> GameObject::getComponent() throw()
 {
-	unsigned index = static_cast<unsigned>(T::getID());
+	unsigned index = T::getId();
 
-	if (index >= static_cast<unsigned>(COMPONENT::END))
+	if (index >= ComponentType::count())
 		throw std::out_of_range("Out of component list");
 
 	if (m_components[index].empty())

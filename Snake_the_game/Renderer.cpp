@@ -23,7 +23,3 @@ void Renderer::draw(sf::RenderTarget & target, sf::RenderStates states)
 	target.draw(*m_sprite, states);
 }
 
-COMPONENT Renderer::getID()
-{
-	return COMPONENT::RENDERER;
-}

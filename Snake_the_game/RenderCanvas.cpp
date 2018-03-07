@@ -15,7 +15,6 @@ RenderCanvas::RenderCanvas(const RenderCanvas & canvas)
 
 RenderCanvas & RenderCanvas::operator=(const RenderCanvas & canvas)
 {
-	
 	return *this;
 }
 

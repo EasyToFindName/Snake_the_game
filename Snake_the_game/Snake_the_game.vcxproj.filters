@@ -88,6 +88,9 @@
     <Filter Include="Component System\Modules">
       <UniqueIdentifier>{05936463-bce3-447f-8b4c-e94468b0962e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Component System\Meta">
+      <UniqueIdentifier>{8bee4404-dd86-4364-a0b0-57cb6b1f0035}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Point.cpp">
@@ -155,6 +158,12 @@
     </ClCompile>
     <ClCompile Include="RenderCanvas.cpp">
       <Filter>Component System\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="ComponentCounter.cpp">
+      <Filter>Component System\Meta</Filter>
+    </ClCompile>
+    <ClCompile Include="MetaComponent.cpp">
+      <Filter>Component System\Meta</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -244,6 +253,12 @@
     </ClInclude>
     <ClInclude Include="RenderCanvas.h">
       <Filter>Component System\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="MetaComponent.h">
+      <Filter>Component System\Meta</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentCounter.h">
+      <Filter>Component System\Meta</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
