@@ -22,7 +22,7 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{6B8FD353-21CF-412B-9B50-A3D392B5998A}</ProjectGuid>
     <RootNamespace>Snakethegame</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -70,12 +70,12 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>G:\ThirdPartyLibs\include;$(IncludePath)</IncludePath>
-    <LibraryPath>G:\ThirdPartyLibs\lib\Debug\SFML;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\My work\Snake Classec\SFML\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\My work\Snake Classec\SFML\libs\x32\Release;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>G:\ThirdPartyLibs\include;$(IncludePath)</IncludePath>
-    <LibraryPath>G:\ThirdPartyLibs\lib\Release\SFML;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\My work\Snake Classec\SFML\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\My work\Snake Classec\SFML\libs\x32\Release;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IncludePath>$(THIRD_PARTY_INCLUDE_PATH);$(IncludePath)</IncludePath>
@@ -132,13 +132,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Component.cpp" />
     <ClCompile Include="Direction.cpp" />
     <ClCompile Include="DynamicObject.cpp" />
     <ClCompile Include="Food.cpp" />
+    <ClCompile Include="GameManager.cpp" />
+    <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="LevelController.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MapBuilder.cpp" />
+    <ClCompile Include="RenderCanvas.cpp" />
+    <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="RenderManager.cpp" />
     <ClCompile Include="StaticObject.cpp" />
     <ClCompile Include="Point.cpp" />
     <ClCompile Include="Portal.cpp" />
@@ -146,9 +152,11 @@
     <ClCompile Include="CircularSaw.cpp" />
     <ClCompile Include="Snake.cpp" />
     <ClCompile Include="Timer.cpp" />
+    <ClCompile Include="Transform.cpp" />
     <ClCompile Include="Wall.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Component.h" />
     <ClInclude Include="declDynamicObjects.h" />
     <ClInclude Include="declLevelObjects.h" />
     <ClInclude Include="declStaticObjects.h" />
@@ -157,11 +165,16 @@
     <ClInclude Include="DynamicObject.h" />
     <ClInclude Include="DynamicObjects.h" />
     <ClInclude Include="Food.h" />
+    <ClInclude Include="GameManager.h" />
+    <ClInclude Include="GameObject.h" />
     <ClInclude Include="LevelController.h" />
     <ClInclude Include="LevelObjects.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="Interfaces.h" />
     <ClInclude Include="MapBuilder.h" />
+    <ClInclude Include="RenderCanvas.h" />
+    <ClInclude Include="Renderer.h" />
+    <ClInclude Include="RenderManager.h" />
     <ClInclude Include="StaticObject.h" />
     <ClInclude Include="Point.h" />
     <ClInclude Include="Portal.h" />
@@ -170,6 +183,7 @@
     <ClInclude Include="Snake.h" />
     <ClInclude Include="StaticObjects.h" />
     <ClInclude Include="Timer.h" />
+    <ClInclude Include="Transform.h" />
     <ClInclude Include="Wall.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

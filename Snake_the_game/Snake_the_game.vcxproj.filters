@@ -73,6 +73,21 @@
     <Filter Include="LevelObjects\Dynamic\CircularSaw">
       <UniqueIdentifier>{218b9ad0-2a9f-47f5-8ccc-8474c515b940}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Component System">
+      <UniqueIdentifier>{a1d081a7-9476-4813-88a6-d5ef4b2049ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component System\Components">
+      <UniqueIdentifier>{a3ad0c49-2314-4fa6-953b-e82af2d2bcc6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component System\GameObject">
+      <UniqueIdentifier>{d645844b-4ae9-4f5f-ad4f-f24f6f9a307f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component System\Managers">
+      <UniqueIdentifier>{7e3b2717-160d-451d-8d53-354547213a7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component System\Modules">
+      <UniqueIdentifier>{05936463-bce3-447f-8b4c-e94468b0962e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Point.cpp">
@@ -119,6 +134,27 @@
     </ClCompile>
     <ClCompile Include="MapBuilder.cpp">
       <Filter>Modules\MapBuilder</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>Component System\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Component.cpp">
+      <Filter>Component System\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Transform.cpp">
+      <Filter>Component System\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="GameManager.cpp">
+      <Filter>Component System\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderManager.cpp">
+      <Filter>Component System\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer.cpp">
+      <Filter>Component System\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderCanvas.cpp">
+      <Filter>Component System\Modules</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -187,6 +223,27 @@
     </ClInclude>
     <ClInclude Include="declLevelObjects.h">
       <Filter>PackedIncludes</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Component System\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Component.h">
+      <Filter>Component System\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Transform.h">
+      <Filter>Component System\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="GameManager.h">
+      <Filter>Component System\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderManager.h">
+      <Filter>Component System\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer.h">
+      <Filter>Component System\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderCanvas.h">
+      <Filter>Component System\Modules</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

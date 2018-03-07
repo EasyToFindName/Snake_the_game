@@ -58,7 +58,7 @@
 //
 //	return ret;
 //}
-
+/*
 int main() {
 	
 	sf::RenderWindow window(sf::VideoMode(640, 480), "Snake game", sf::Style::Close);
@@ -107,6 +107,54 @@ int main() {
 
 		window.clear(DrawConfig::BACKGROUND_COLOR);
 		game.draw();
+		window.display();
+	}
+
+	return 0;
+}*/
+#include "GameObject.h"
+#include "GameManager.h"
+#include "Renderer.h"
+
+int main() {
+
+	sf::RenderWindow window(sf::VideoMode(640, 480), "Snake game", sf::Style::Close);
+	window.setVerticalSyncEnabled(true);
+	
+	//INIT
+	GameObject* object = new GameObject();
+	object->addComponent<Renderer>();
+	
+	object->transform()->setOrigin(16, 16);
+	object->transform()->setPosition(100, 100);
+
+
+
+	while (window.isOpen()) {
+		
+		sf::Event event;
+		
+
+		while (window.pollEvent(event)) {
+			if (event.type == sf::Event::Closed){
+				window.close();
+			}
+
+			if (event.type == sf::Event::KeyPressed) {
+				
+				if (event.key.code == sf::Keyboard::D)
+				{
+					object->transform()->move(4.0f, 0.0f);
+				}
+				if (event.key.code == sf::Keyboard::W)
+				{
+					object->transform()->rotate(2.0f);
+				}
+			}
+		}
+
+		window.clear(DrawConfig::BACKGROUND_COLOR);
+		GameManager::getInstance().renderManager()->draw(window, sf::RenderStates::Default);
 		window.display();
 	}
 
