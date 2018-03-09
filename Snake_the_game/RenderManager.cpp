@@ -1,4 +1,5 @@
 #include "RenderManager.h"
+#include "Renderer.h"
 
 RenderManager::RenderManager()
 {
@@ -9,7 +10,7 @@ RenderManager::~RenderManager()
 {
 
 }
-
+/*
 void RenderManager::addCanvas(const std::shared_ptr<RenderCanvas>& canvas)
 {
 	m_canvases.push_back(canvas);
@@ -26,10 +27,20 @@ void RenderManager::removeCanvas(const std::shared_ptr<RenderCanvas>& canvas)
 
 	}
 }
+*/
+void RenderManager::addRenderer(Renderer * renderer)
+{
+	m_renderers.push_back(renderer);
+	std::sort(m_renderers.begin(), m_renderers.end());
+}
 
 void RenderManager::draw(sf::RenderTarget & target, sf::RenderStates states) const
 {
-	for (auto& canvas : m_canvases) {
+	/*for (auto& canvas : m_canvases) {
 		canvas->draw(target, states);
+	}*/
+
+	for (auto& renderer : m_renderers) {
+		renderer->draw(target, states);
 	}
 }
