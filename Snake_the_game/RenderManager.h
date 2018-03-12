@@ -16,15 +16,11 @@ public:
 	RenderManager(const RenderManager&) = delete;
 	void operator=(const RenderManager&) = delete;
 
-	/*void addCanvas(const std::shared_ptr<RenderCanvas>& canvas);
-	void removeCanvas(const std::shared_ptr<RenderCanvas>& canvas);*/
-
+	
 	void addRenderer(Renderer* renderer);
-
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
-
+	void removeRenderer(Renderer* r);
 private:
-	//std::vector<std::shared_ptr<RenderCanvas>> m_canvases;
 
 	std::vector<Renderer*> m_renderers;
 };

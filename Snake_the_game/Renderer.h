@@ -4,7 +4,6 @@
 #include <memory>
 
 #include "Component.h"
-//#include "RenderCanvas.h"
 #include "GameManager.h"
 
 using RenderLayer = unsigned;
@@ -14,12 +13,11 @@ public:
 	Renderer(GameObject* gameObject);
 	virtual ~Renderer();
 
-	bool operator < (const Renderer& renderer);
+	bool operator<(const Renderer& renderer);
 
 	void draw(sf::RenderTarget& target, sf::RenderStates states);
-
+	
 private:
-	//std::shared_ptr<RenderCanvas> m_canvas;
 	sf::Sprite* m_sprite;
 	RenderLayer m_layer = 0;
 

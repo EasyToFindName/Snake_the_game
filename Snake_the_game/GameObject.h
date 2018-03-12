@@ -11,35 +11,36 @@ public:
 	~GameObject();
 
 	template<typename T>
-	std::shared_ptr<T> addComponent() throw();
+	T& addComponent();
 
 	template<typename T>
-	std::shared_ptr<T> getComponent() throw();
+	T& getComponent();
 
-	std::shared_ptr<Transform> transform() const;
+	Transform& transform() const;
 
-private:
-	std::vector<std::vector<std::shared_ptr<Component>>> m_components;
-	std::shared_ptr<Transform> m_transform;
+private: 
+	std::vector<std::vector<std::unique_ptr<Component>>> m_components;
+	Transform* m_transform;
 };
 
 template<typename T>
-std::shared_ptr<T> GameObject::addComponent() throw()
+T& GameObject::addComponent()
 {
 	unsigned index = T::getId();
 
 	if (index >= ComponentType::count())
 		throw std::out_of_range("Out of component list");
 
-	auto component = std::make_shared<T>(this);
+	auto component = std::unique_ptr<T>(new T(this));
+	auto componentAddr = component.get();
 
-	m_components[index].push_back(component);
+	m_components[index].push_back(std::move(component));
 
-	return component;
+	return *componentAddr;
 }
 
 template<typename T>
-std::shared_ptr<T> GameObject::getComponent() throw()
+T& GameObject::getComponent()
 {
 	unsigned index = T::getId();
 
@@ -49,5 +50,5 @@ std::shared_ptr<T> GameObject::getComponent() throw()
 	if (m_components[index].empty())
 		throw std::out_of_range("Out of component list");
 
-	return std::dynamic_pointer_cast<T>(m_components[index].at(0));
+	return std::dynamic_cast<T>(*m_components[index].at(0));
 }

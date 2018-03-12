@@ -114,7 +114,7 @@ int main() {
 }*/
 #include "GameObject.h"
 #include "GameManager.h"
-#include "Renderer.h"
+//#include "Renderer.h"
 
 int main() {
 
@@ -123,10 +123,10 @@ int main() {
 	
 	//INIT
 	GameObject* object = new GameObject();
-	object->addComponent<Renderer>();
+	//object->addComponent<Renderer>();
 	
-	object->transform()->setOrigin(16, 16);
-	object->transform()->setPosition(100, 100);
+	//object->transform().setOrigin(16, 16);
+	//object->transform().setPosition(100, 100);
 
 
 	while (window.isOpen()) {
@@ -143,11 +143,11 @@ int main() {
 				
 				if (event.key.code == sf::Keyboard::D)
 				{
-					object->transform()->move(4.0f, 0.0f);
+					object->transform().move(4.0f, 0.0f);
 				}
 				if (event.key.code == sf::Keyboard::W)
 				{
-					object->transform()->rotate(2.0f);
+					object->transform().rotate(2.0f);
 				}
 			}
 		}

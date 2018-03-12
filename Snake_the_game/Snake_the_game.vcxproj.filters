@@ -156,9 +156,6 @@
     <ClCompile Include="Renderer.cpp">
       <Filter>Component System\Components</Filter>
     </ClCompile>
-    <ClCompile Include="RenderCanvas.cpp">
-      <Filter>Component System\Modules</Filter>
-    </ClCompile>
     <ClCompile Include="ComponentCounter.cpp">
       <Filter>Component System\Meta</Filter>
     </ClCompile>
@@ -250,9 +247,6 @@
     </ClInclude>
     <ClInclude Include="Renderer.h">
       <Filter>Component System\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="RenderCanvas.h">
-      <Filter>Component System\Modules</Filter>
     </ClInclude>
     <ClInclude Include="MetaComponent.h">
       <Filter>Component System\Meta</Filter>

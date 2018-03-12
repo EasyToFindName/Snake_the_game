@@ -2,13 +2,8 @@
 
 GameObject::GameObject() : m_components(ComponentType::count())
 {
-	try {
-		m_transform = addComponent<Transform>();
-		m_transform->setPosition(10, 15);
-	}
-	catch (std::exception& exp) {
-
-	}
+	m_transform = &addComponent<Transform>();
+	m_transform->setPosition(10, 15);
 }
 
 
@@ -16,7 +11,7 @@ GameObject::~GameObject()
 {
 }
 
-std::shared_ptr<Transform> GameObject::transform() const
+Transform& GameObject::transform() const
 {
-	return m_transform;
+	return *m_transform;
 }

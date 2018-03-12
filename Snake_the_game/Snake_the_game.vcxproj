@@ -22,7 +22,7 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{6B8FD353-21CF-412B-9B50-A3D392B5998A}</ProjectGuid>
     <RootNamespace>Snakethegame</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -144,7 +144,6 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MapBuilder.cpp" />
     <ClCompile Include="MetaComponent.cpp" />
-    <ClCompile Include="RenderCanvas.cpp" />
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="RenderManager.cpp" />
     <ClCompile Include="StaticObject.cpp" />
@@ -176,7 +175,6 @@
     <ClInclude Include="Interfaces.h" />
     <ClInclude Include="MapBuilder.h" />
     <ClInclude Include="MetaComponent.h" />
-    <ClInclude Include="RenderCanvas.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="RenderManager.h" />
     <ClInclude Include="StaticObject.h" />
