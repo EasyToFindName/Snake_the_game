@@ -114,7 +114,7 @@ int main() {
 }*/
 #include "GameObject.h"
 #include "GameManager.h"
-//#include "Renderer.h"
+#include "Renderer.h"
 
 int main() {
 
@@ -123,11 +123,7 @@ int main() {
 	
 	//INIT
 	GameObject* object = new GameObject();
-	//object->addComponent<Renderer>();
-	
-	//object->transform().setOrigin(16, 16);
-	//object->transform().setPosition(100, 100);
-
+	object->addComponent<Renderer>();
 
 	while (window.isOpen()) {
 		
