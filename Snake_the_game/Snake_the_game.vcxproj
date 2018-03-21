@@ -159,6 +159,7 @@
   <ItemGroup>
     <ClInclude Include="Component.h" />
     <ClInclude Include="ComponentCounter.h" />
+    <ClInclude Include="CompReg.h" />
     <ClInclude Include="declDynamicObjects.h" />
     <ClInclude Include="declLevelObjects.h" />
     <ClInclude Include="declStaticObjects.h" />

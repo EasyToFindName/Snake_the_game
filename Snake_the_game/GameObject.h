@@ -5,6 +5,9 @@
 
 #include "Transform.h"
 
+
+#include <iostream>
+
 class GameObject
 {
 public:
@@ -33,9 +36,9 @@ private:
 template<typename T>
 T* GameObject::addComponent()
 {
-	unsigned index = T::getId();
+	unsigned index = COMPONENT_VALUE(T);
 
-	if (index >= ComponentType::count())
+	if (index >= COMPONENT_MAX)
 		throw std::out_of_range("Out of component list");
 
 	auto component = std::unique_ptr<T>(new T(this));
@@ -49,9 +52,9 @@ T* GameObject::addComponent()
 template<typename T>
 T* GameObject::getComponent()
 {
-	unsigned index = T::getId();
+	unsigned index = COMPONENT_VALUE(T);
 
-	if (index >= ComponentType::count())
+	if (index >= m_components.size())
 		throw std::out_of_range("Out of component list");
 
 	if (m_components[index].empty())
@@ -63,9 +66,9 @@ T* GameObject::getComponent()
 template<typename T>
 std::vector<T*> GameObject::getComponents()
 {
-	unsigned index = T::getId();
+	unsigned index = COMPONENT_VALUE(T);
 
-	if (index >= ComponentType::count())
+	if (index >= m_components.size())
 		throw std::out_of_range("Out of component list");
 
 	std::vector<T*> comps;

@@ -1,5 +1,6 @@
 #include "Renderer.h"
 #include "GameObject.h"
+
 Renderer::Renderer(GameObject* gameObject) : Component(gameObject)
 {
 

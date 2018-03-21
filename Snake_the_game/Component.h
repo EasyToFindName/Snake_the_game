@@ -12,10 +12,11 @@ public:
 	virtual ~Component() = default;
 
 
-	virtual unsigned getType() = 0;
+	//virtual unsigned getType() = 0;
 
 protected:
 	GameObject* m_gameObject;
 };
 
-#include "MetaComponent.h"
+//#include "MetaComponent.h"
+#include "CompReg.h"

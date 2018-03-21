@@ -254,5 +254,8 @@
     <ClInclude Include="ComponentCounter.h">
       <Filter>Component System\Meta</Filter>
     </ClInclude>
+    <ClInclude Include="CompReg.h">
+      <Filter>Component System\Meta</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

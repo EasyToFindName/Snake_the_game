@@ -7,4 +7,4 @@ public:
 	Transform(GameObject* gameObject);
 	virtual ~Transform();
 
-END_COMPONENT
+END_COMPONENT(Transform)

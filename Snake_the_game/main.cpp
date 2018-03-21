@@ -112,9 +112,10 @@ int main() {
 
 	return 0;
 }*/
+
+#include "Renderer.h"
 #include "GameObject.h"
 #include "GameManager.h"
-#include "Renderer.h"
 
 int main() {
 
@@ -124,6 +125,8 @@ int main() {
 	//INIT
 	GameObject* object = new GameObject();
 	object->addComponent<Renderer>();
+	
+	std::cout << COMPONENT_VALUE(Transform) << std::endl;
 
 	while (window.isOpen()) {
 		

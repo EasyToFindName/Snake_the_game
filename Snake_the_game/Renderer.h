@@ -21,4 +21,4 @@ private:
 	sf::Sprite* m_sprite;
 	RenderLayer m_layer = 0;
 
-END_COMPONENT
+END_COMPONENT(Renderer)
