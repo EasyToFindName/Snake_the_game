@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include <unordered_map>
 #include <memory>
 
 #include "Transform.h"
@@ -25,7 +26,7 @@ protected:
 	T* convertComponent(Component* comp) const;
 
 private: 
-	std::vector<std::vector<std::unique_ptr<Component>>> m_components;
+	std::unordered_map<unsigned, std::vector<std::unique_ptr<Component>>> m_components;
 	Transform* m_transform;
 };
 
@@ -71,10 +72,10 @@ std::vector<T*> GameObject::getComponents()
 	comps.reserve((m_components[index].size()));
 
 	for (auto &ptr : m_components[index]) {
-		comps.push_back(std::move( convertComponent<T>(ptr.get())));
+		comps.push_back(convertComponent<T>(ptr.get()));
 	}
 
-	return std::move(comps);
+	return comps;
 }
 
 template<typename T>
