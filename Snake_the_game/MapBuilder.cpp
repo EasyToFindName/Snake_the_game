@@ -11,6 +11,11 @@ MapBuilder::MapBuilder(sf::RenderWindow & w, unsigned width, unsigned height)
 
 MapBuilder::~MapBuilder() {}
 
+MapBuilder& MapBuilder::addMovingFood(const MovingFood& f) {
+	m_movingFood.push_back(std::unique_ptr<MovingFood>(new MovingFood(f)));
+	return *this;
+}
+
 MapBuilder& MapBuilder::addPermaFood(int amount) {
 	for(int i = 0; i < amount; ++i) {
 		m_permaFood.push_back(std::unique_ptr<Food>(new Food()));
@@ -102,6 +107,10 @@ Map MapBuilder::construct() {
 	}
 
 	for(auto& i : m_saws) {
+		ret.m_dynamicObjects.push_back(std::move(i));
+	}
+
+	for (auto&i : m_movingFood) {
 		ret.m_dynamicObjects.push_back(std::move(i));
 	}
 

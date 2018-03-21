@@ -1,6 +1,7 @@
 #pragma once
 
 #include "DynamicObject.h"
+#include "DynamicObjects.h"
 #include "Point.h"
 #include "Direction.h"
 #include "Interfaces.h"
@@ -60,6 +61,7 @@ public: //reactable implementation
 public: //reactor implementation
 	virtual bool affect(Snake& s) override;
 	virtual bool affect(CircularSaw& saw) override;
+	virtual bool affect(MovingFood& f) override;
 public: //movable implementation
 	virtual bool move() override;
 public: //drawable implementation

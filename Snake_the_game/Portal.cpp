@@ -58,3 +58,12 @@ bool Portal::affect(CircularSaw& s) {
 
 	return false;
 }
+
+bool Portal::affect(MovingFood & f) {
+	if (pos == f.pos) {
+		f.pos = m_exitPortal->pos;
+		f.move();
+		return true;
+	}
+	return false;
+}

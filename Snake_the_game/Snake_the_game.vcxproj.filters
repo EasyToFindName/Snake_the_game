@@ -73,6 +73,9 @@
     <Filter Include="LevelObjects\Dynamic\CircularSaw">
       <UniqueIdentifier>{218b9ad0-2a9f-47f5-8ccc-8474c515b940}</UniqueIdentifier>
     </Filter>
+    <Filter Include="LevelObjects\Dynamic\MovingFood">
+      <UniqueIdentifier>{0ca39cbe-b699-49fd-be51-62d54d36dba5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Point.cpp">
@@ -119,6 +122,9 @@
     </ClCompile>
     <ClCompile Include="MapBuilder.cpp">
       <Filter>Modules\MapBuilder</Filter>
+    </ClCompile>
+    <ClCompile Include="MovingFood.cpp">
+      <Filter>LevelObjects\Dynamic\MovingFood</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -187,6 +193,9 @@
     </ClInclude>
     <ClInclude Include="declLevelObjects.h">
       <Filter>PackedIncludes</Filter>
+    </ClInclude>
+    <ClInclude Include="MovingFood.h">
+      <Filter>LevelObjects\Dynamic\MovingFood</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

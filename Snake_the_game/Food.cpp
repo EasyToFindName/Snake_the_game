@@ -42,3 +42,7 @@ bool Food::affect(CircularSaw& saw) {
 	}
 	return false;
 }
+
+bool Food::affect(MovingFood & f) {
+	return false;
+}

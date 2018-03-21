@@ -1,6 +1,7 @@
 #pragma once
 
 #include "StaticObject.h"
+#include "DynamicObjects.h"
 #include "Map.h"
 
 class CircularSaw;
@@ -15,5 +16,6 @@ public: //Drawable implementation
 public: //Reactor implementation
 	virtual bool affect(Snake&) override;
 	virtual bool affect(CircularSaw&) override;
+	virtual bool affect(MovingFood& f) override;
 };
 

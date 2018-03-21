@@ -96,12 +96,18 @@ bool Snake::affect(CircularSaw& saw) {
 	return saw.affect(*this);
 }
 
+bool Snake::affect(MovingFood & f) {
+	return f.affect(*this);
+}
+
 bool Snake::move() {
 	if (checkSelfCollision() == false) {
 		m_body.push_front(m_body.front() + m_dir.to_point());
 		m_tail = m_body.back();
 		m_body.pop_back();
 		pos = head();
+		
+
 		return true;
 	}
 	die();

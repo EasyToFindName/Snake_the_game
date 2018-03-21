@@ -5,8 +5,7 @@
 class DynamicObject: 
 	public StaticObject,
 	public Movable,
-	public Reactable,
-	private Timer
+	public Reactable
 {
 public:
 	DynamicObject(const Timer& period, const Point& p = Point::NO_POINT);
@@ -15,5 +14,7 @@ public:
 	bool isTimerExpired();
 	void makeTimerExpired();
 	void updateTimer(const sf::Time& dt);
+protected:
+	Timer m_timer;
 };
 

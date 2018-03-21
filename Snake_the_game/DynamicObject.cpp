@@ -1,22 +1,22 @@
 #include "DynamicObject.h"
 
 
-DynamicObject::DynamicObject(const Timer& period, const Point& p) : Timer(period), StaticObject(p) {
+DynamicObject::DynamicObject(const Timer& period, const Point& p) : m_timer(period), StaticObject(p) {
 
 }
 
 void DynamicObject::updateTimer(const sf::Time& dt) {
-	Timer::tick(dt);
+	m_timer.tick(dt);
 }
 
 void DynamicObject::resetTimer() {
-	Timer::reset();
+	m_timer.reset();
 }
 
 void DynamicObject::makeTimerExpired() {
-	Timer::makeExpired();
+	m_timer.makeExpired();
 }
 
 bool DynamicObject::isTimerExpired() {
-	return Timer::hasExpired();
+	return m_timer.hasExpired();
 }

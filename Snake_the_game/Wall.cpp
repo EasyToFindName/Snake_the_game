@@ -31,3 +31,13 @@ bool Wall::affect(CircularSaw& s) {
 
 	return false;
 }
+
+bool Wall::affect(MovingFood & f) {
+	bool flag = false;
+	if (f.nextPos() == pos || f.pos == pos) {
+		f.changeDirection();
+		flag = true;
+	}
+
+	return flag;
+}

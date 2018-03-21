@@ -139,6 +139,7 @@
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MapBuilder.cpp" />
+    <ClCompile Include="MovingFood.cpp" />
     <ClCompile Include="StaticObject.cpp" />
     <ClCompile Include="Point.cpp" />
     <ClCompile Include="Portal.cpp" />
@@ -162,6 +163,7 @@
     <ClInclude Include="Map.h" />
     <ClInclude Include="Interfaces.h" />
     <ClInclude Include="MapBuilder.h" />
+    <ClInclude Include="MovingFood.h" />
     <ClInclude Include="StaticObject.h" />
     <ClInclude Include="Point.h" />
     <ClInclude Include="Portal.h" />

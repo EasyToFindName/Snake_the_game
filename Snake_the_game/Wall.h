@@ -1,6 +1,7 @@
 #pragma once
 
 #include "StaticObject.h"
+#include "DynamicObjects.h"
 
 class Wall : public StaticObject {
 public:
@@ -11,5 +12,6 @@ public: //Drawable implementation
 public: //Reactor implementation
 	virtual bool affect(Snake&) override;
 	virtual bool affect(CircularSaw& saw) override;
+	virtual bool affect(MovingFood& f) override;
 };
 

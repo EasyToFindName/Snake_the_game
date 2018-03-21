@@ -15,7 +15,12 @@ CircularSaw::CircularSaw(const Point& from, const Point&to, const sf::Time& spee
 }
 
 Point CircularSaw::nextPos() const {
-	return pos + m_direction.to_point();
+	Point p = m_direction.to_point();
+
+	if (pos == m_to)
+		p = p.reversed();
+
+	return pos + p;
 }
 
 bool CircularSaw::move() {
@@ -80,6 +85,10 @@ bool CircularSaw::affect(CircularSaw& s) {
 	}
 
 	return false;
+}
+
+bool CircularSaw::affect(MovingFood & f) {
+	return f.affect(*this);
 }
 
 bool CircularSaw::reactOn(Reactor& r) {

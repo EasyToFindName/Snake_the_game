@@ -1,8 +1,7 @@
 #pragma once
 #define interface struct
 
-class Snake;
-class CircularSaw;
+#include "declDynamicObjects.h"
 #include <SFML\Graphics.hpp>
 #include <SFML\Window.hpp>
 
@@ -29,6 +28,7 @@ interface Reactor {
 	//returns ReactOn status
 	virtual bool affect(Snake&) = 0;
 	virtual bool affect(CircularSaw&) = 0;
+	virtual bool affect(MovingFood&) = 0;
 };
 
 interface Reactable {

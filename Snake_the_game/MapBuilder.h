@@ -11,6 +11,7 @@ public:
 	MapBuilder(sf::RenderWindow& w, unsigned width, unsigned height);
 	~MapBuilder();
 
+	MapBuilder& addMovingFood(const MovingFood& f);
 	MapBuilder& addPermaFood(int amount = 1);
 	MapBuilder& addDisposableFood(const Food& f);
 	MapBuilder& addWall(const Wall& w);
@@ -26,6 +27,7 @@ private:
 	std::vector<std::unique_ptr<Wall>> m_walls;
 	std::vector<std::unique_ptr<Snake>> m_snakes;
 	std::vector<std::unique_ptr<CircularSaw>> m_saws;
+	std::vector<std::unique_ptr<MovingFood>> m_movingFood;
 
 	sf::RenderWindow& m_window;
 

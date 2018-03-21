@@ -2,3 +2,4 @@
 
 class CircularSaw;
 class Snake;
+class MovingFood;

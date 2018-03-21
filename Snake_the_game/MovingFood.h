@@ -1,17 +1,18 @@
 #pragma once
-
-#include "Interfaces.h"
 #include "DynamicObject.h"
-#include "DynamicObjects.h"
 #include "Direction.h"
-#include <set>
-
-class CircularSaw : public DynamicObject {
+#include "RandomGenerator.h"
+#include "Map.h"
+class MovingFood : public DynamicObject {
 public:
-	CircularSaw(const Point& from, const Point& to, const sf::Time& speed = sf::milliseconds(150));
-	//changes direction to opposite
-	void changeDirection();
+	MovingFood(const Point& startPos, const sf::Time& timer);
+	MovingFood(const MovingFood&);
+	~MovingFood();
+
 	Point nextPos() const;
+	void changeDirection();
+
+	virtual void postProcessing(Map& m) override;
 public: //Movable implementation
 	virtual bool move() override;
 public: //Drawable implementation
@@ -22,10 +23,10 @@ public: //Reactor impolementation
 	virtual bool affect(MovingFood& f) override;
 public: //Reactable implementation
 	virtual bool reactOn(Reactor& r) override;
+protected:
+	Direction genRandomDir() const;
 private:
-	Point m_from;
-	Point m_to;
-	Direction m_direction;
-	std::set<Point> m_path;
+	Direction m_dir;
+	mutable RandomGenerator m_rand;
 };
 

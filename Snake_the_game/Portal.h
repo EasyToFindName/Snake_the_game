@@ -1,7 +1,7 @@
 #pragma once
 
 #include "StaticObject.h"
-
+#include "DynamicObjects.h"
 class Portal : public StaticObject {
 public:
 	Portal();
@@ -19,6 +19,7 @@ public: //Drawable implementation
 public: //Reactor implementation
 	virtual bool affect(Snake&) override;
 	virtual bool affect(CircularSaw&) override;
+	virtual bool affect(MovingFood& f) override;
 
 private:
 	Portal* m_exitPortal;
