@@ -4,7 +4,8 @@
 #include <memory>
 
 #include "Transform.h"
-
+#include "Renderer.h"
+#include "Module.h"
 
 #include <iostream>
 
@@ -31,6 +32,7 @@ protected:
 private: 
 	std::unordered_map<unsigned, std::vector<std::unique_ptr<Component>>> m_components;
 	Transform* m_transform;
+
 };
 
 template<typename T>

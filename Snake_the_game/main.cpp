@@ -113,20 +113,18 @@ int main() {
 	return 0;
 }*/
 
-#include "Renderer.h"
-#include "GameObject.h"
+#include "MainModule.h"
 #include "GameManager.h"
+
+
 
 int main() {
 
 	sf::RenderWindow window(sf::VideoMode(640, 480), "Snake game", sf::Style::Close);
 	window.setVerticalSyncEnabled(true);
 	
-	//INIT
-	GameObject* object = new GameObject();
-	object->addComponent<Renderer>();
+	_GameManager.pushModule(std::unique_ptr<Module>(new MainModule));
 	
-	std::cout << COMPONENT_VALUE(Transform) << std::endl;
 
 	while (window.isOpen()) {
 		
@@ -138,21 +136,13 @@ int main() {
 				window.close();
 			}
 
-			if (event.type == sf::Event::KeyPressed) {
-				
-				if (event.key.code == sf::Keyboard::D)
-				{
-					object->transform().move(4.0f, 0.0f);
-				}
-				if (event.key.code == sf::Keyboard::W)
-				{
-					object->transform().rotate(2.0f);
-				}
+			else if (event.type == sf::Event::KeyPressed) {
+				_GameManager.processInput(event.key.code);
 			}
 		}
 
 		window.clear(DrawConfig::BACKGROUND_COLOR);
-		GameManager::getInstance().renderManager()->draw(window, sf::RenderStates::Default);
+		_GameManager.draw(window, sf::RenderStates::Default);
 		window.display();
 	}
 

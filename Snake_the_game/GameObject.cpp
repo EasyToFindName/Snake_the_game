@@ -6,7 +6,6 @@ GameObject::GameObject() //: m_components(COMPONENT_MAX)
 	m_transform->setPosition(10, 15);
 }
 
-
 GameObject::~GameObject()
 {
 }

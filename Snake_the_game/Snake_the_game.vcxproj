@@ -133,17 +133,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Component.cpp" />
-    <ClCompile Include="ComponentCounter.cpp" />
     <ClCompile Include="Direction.cpp" />
     <ClCompile Include="DynamicObject.cpp" />
     <ClCompile Include="Food.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="LevelController.cpp" />
+    <ClCompile Include="MainModule.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MapBuilder.cpp" />
-    <ClCompile Include="MetaComponent.cpp" />
+    <ClCompile Include="Module.cpp" />
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="RenderManager.cpp" />
     <ClCompile Include="StaticObject.cpp" />
@@ -158,7 +158,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Component.h" />
-    <ClInclude Include="ComponentCounter.h" />
     <ClInclude Include="CompReg.h" />
     <ClInclude Include="declDynamicObjects.h" />
     <ClInclude Include="declLevelObjects.h" />
@@ -172,10 +171,11 @@
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="LevelController.h" />
     <ClInclude Include="LevelObjects.h" />
+    <ClInclude Include="MainModule.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="Interfaces.h" />
     <ClInclude Include="MapBuilder.h" />
-    <ClInclude Include="MetaComponent.h" />
+    <ClInclude Include="Module.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="RenderManager.h" />
     <ClInclude Include="StaticObject.h" />

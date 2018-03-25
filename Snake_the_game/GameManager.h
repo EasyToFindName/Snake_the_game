@@ -1,6 +1,8 @@
 #pragma once
 
-#include "RenderManager.h"
+#include "Module.h"
+#include <memory>
+
 
 class GameManager {
 public:
@@ -9,14 +11,23 @@ public:
 	void operator=(const GameManager&) = delete;
 	static GameManager& getInstance();
 
-	RenderManager* renderManager() const;
+	void processInput(const sf::Keyboard::Key& key);
+	void run(const sf::Time& dt);
+	void draw(sf::RenderTarget& target, sf::RenderStates states);
+
+	void pushModule(std::unique_ptr<Module>&& mod);
+	void popModule();
+	void switchModule(std::unique_ptr<Module>&& mod);
+	Module* topModule();
 
 private:
 	static GameManager m_instance;
-
+	std::vector<std::unique_ptr<Module>> m_moduleStack;
+	
 	GameManager();
 	~GameManager();
 
 
-	RenderManager* m_renderManager;
 };
+
+#define _GameManager GameManager::getInstance()
