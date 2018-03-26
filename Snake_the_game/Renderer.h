@@ -15,6 +15,8 @@ public:
 
 	bool operator<(const Renderer& renderer);
 
+	virtual Component* clone(GameObject* gameObject) override;
+
 	void draw(sf::RenderTarget& target, sf::RenderStates states);
 	
 private:

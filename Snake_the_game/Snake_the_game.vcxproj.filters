@@ -156,10 +156,10 @@
     <ClCompile Include="Renderer.cpp">
       <Filter>Component System\Components</Filter>
     </ClCompile>
-    <ClCompile Include="Module.cpp">
-      <Filter>BaseObjects</Filter>
-    </ClCompile>
     <ClCompile Include="MainModule.cpp">
+      <Filter>Component System\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="Module.cpp">
       <Filter>Component System\Modules</Filter>
     </ClCompile>
   </ItemGroup>
@@ -251,10 +251,10 @@
     <ClInclude Include="CompReg.h">
       <Filter>Component System\Meta</Filter>
     </ClInclude>
-    <ClInclude Include="Module.h">
-      <Filter>BaseObjects</Filter>
-    </ClInclude>
     <ClInclude Include="MainModule.h">
+      <Filter>Component System\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Module.h">
       <Filter>Component System\Modules</Filter>
     </ClInclude>
   </ItemGroup>

@@ -25,6 +25,8 @@ public:
 	std::vector<T*> getComponents();
 
 	Transform& transform() const;
+
+	virtual GameObject* clone();
 protected:
 	template<typename T>
 	T* convertComponent(Component* comp) const;

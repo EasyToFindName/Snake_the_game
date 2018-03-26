@@ -11,6 +11,7 @@ public:
 
 	virtual ~Component() = default;
 
+	virtual Component* clone(GameObject* gameObject) = 0;
 
 	//virtual unsigned getType() = 0;
 

@@ -34,3 +34,13 @@ bool Renderer::operator<(const Renderer& renderer)
 {
 	return this->m_layer < renderer.m_layer;
 }
+
+Component * Renderer::clone(GameObject * gameObject)
+{
+	Renderer* component = new Renderer(gameObject);
+
+	component->m_sprite = new sf::Sprite(*m_sprite);
+	component->m_layer = m_layer;
+
+	return component;
+}
