@@ -3,11 +3,7 @@
 
 Renderer::Renderer(GameObject* gameObject) : Component(gameObject)
 {
-	Module* activeModule = _GameManager.topModule();
-
-	if (activeModule) {
-		activeModule->renderManager.addRenderer(this);
-	}
+	gameObject->currentModule()->renderManager.addRenderer(this);
 
 	m_sprite = new sf::Sprite();
 	m_sprite->setTexture(sf::Texture());
@@ -26,7 +22,7 @@ Renderer::~Renderer()
 
 void Renderer::draw(sf::RenderTarget & target, sf::RenderStates states)
 {
-	states.transform *= m_gameObject->transform().getTransform();
+	states.transform *= m_gameObject->transform()->getTransform();
 	target.draw(*m_sprite, states);
 }
 

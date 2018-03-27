@@ -2,6 +2,7 @@
 
 #include "Module.h"
 #include "GameObject.h"
+#include "Cubeckiy.h"
 
 class MainModule : public Module {
 public:
@@ -12,5 +13,7 @@ public:
 
 private:
 	GameObject* m_object;
+
+	std::vector<std::unique_ptr<GameObject>> m_gameObjects;
 };
 

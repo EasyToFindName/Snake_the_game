@@ -141,6 +141,8 @@ int main() {
 			}
 		}
 
+		//_GameManager.run(dt);
+
 		window.clear(DrawConfig::BACKGROUND_COLOR);
 		_GameManager.draw(window, sf::RenderStates::Default);
 		window.display();

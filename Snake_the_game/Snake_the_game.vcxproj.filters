@@ -79,9 +79,6 @@
     <Filter Include="Component System\Components">
       <UniqueIdentifier>{a3ad0c49-2314-4fa6-953b-e82af2d2bcc6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Component System\GameObject">
-      <UniqueIdentifier>{d645844b-4ae9-4f5f-ad4f-f24f6f9a307f}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Component System\Managers">
       <UniqueIdentifier>{7e3b2717-160d-451d-8d53-354547213a7c}</UniqueIdentifier>
     </Filter>
@@ -90,6 +87,12 @@
     </Filter>
     <Filter Include="Component System\Meta">
       <UniqueIdentifier>{8bee4404-dd86-4364-a0b0-57cb6b1f0035}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component System\GameObjects">
+      <UniqueIdentifier>{d645844b-4ae9-4f5f-ad4f-f24f6f9a307f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component System\GameObjects\Test">
+      <UniqueIdentifier>{bdf70961-b48d-454b-9677-d000f99363eb}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -139,7 +142,7 @@
       <Filter>Modules\MapBuilder</Filter>
     </ClCompile>
     <ClCompile Include="GameObject.cpp">
-      <Filter>Component System\GameObject</Filter>
+      <Filter>Component System\GameObjects</Filter>
     </ClCompile>
     <ClCompile Include="Component.cpp">
       <Filter>Component System\Components</Filter>
@@ -161,6 +164,9 @@
     </ClCompile>
     <ClCompile Include="Module.cpp">
       <Filter>Component System\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="Cubeckiy.cpp">
+      <Filter>Component System\GameObjects\Test</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -231,7 +237,7 @@
       <Filter>PackedIncludes</Filter>
     </ClInclude>
     <ClInclude Include="GameObject.h">
-      <Filter>Component System\GameObject</Filter>
+      <Filter>Component System\GameObjects</Filter>
     </ClInclude>
     <ClInclude Include="Component.h">
       <Filter>Component System\Components</Filter>
@@ -256,6 +262,9 @@
     </ClInclude>
     <ClInclude Include="Module.h">
       <Filter>Component System\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Cubeckiy.h">
+      <Filter>Component System\GameObjects\Test</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,30 +1,32 @@
 #include "GameObject.h"
 
-GameObject::GameObject() //: m_components(COMPONENT_MAX)
+GameObject::GameObject(Module* mod)
 {
-	m_transform = addComponent<Transform>();
-	m_transform->setPosition(10, 15);
+	m_module = mod;
+	addComponent<Transform>();
 }
 
 GameObject::~GameObject()
 {
 }
 
-Transform& GameObject::transform() const
+Transform* GameObject::transform()
 {
-	return *m_transform;
+	return getComponent<Transform>();
 }
 
-GameObject * GameObject::clone()
+Module * GameObject::currentModule() const
 {
-	auto object = new GameObject();
-	object->m_components.clear();
+	return m_module;
+}
 
-	for (auto& comps : m_components){
+void GameObject::copyComponentsTo(GameObject & object) const
+{
+	object.m_components.clear();
+
+	for (auto& comps : m_components) {
 		for (auto& component : comps.second) {
-			object->m_components.at(comps.first).emplace_back(std::unique_ptr<Component>(component->clone(object)));
+			object.m_components.at(comps.first).emplace_back(std::unique_ptr<Component>(component->clone(&object)));
 		}
 	}
-
-	return object;
 }

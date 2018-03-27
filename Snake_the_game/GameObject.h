@@ -12,8 +12,8 @@
 class GameObject
 {
 public:
-	GameObject();
-	~GameObject();
+	GameObject(Module* mod);
+	virtual ~GameObject();
 
 	template<typename T>
 	T* addComponent();
@@ -24,17 +24,20 @@ public:
 	template<typename T>
 	std::vector<T*> getComponents();
 
-	Transform& transform() const;
+	Transform* transform();
+	Module* currentModule() const;
 
-	virtual GameObject* clone();
+	virtual void run(const sf::Time& dt) {};
+	virtual GameObject* clone() = 0;
 protected:
 	template<typename T>
 	T* convertComponent(Component* comp) const;
 
+	void copyComponentsTo(GameObject& object) const;
+
 private: 
 	std::unordered_map<unsigned, std::vector<std::unique_ptr<Component>>> m_components;
-	Transform* m_transform;
-
+	Module* m_module;
 };
 
 template<typename T>
