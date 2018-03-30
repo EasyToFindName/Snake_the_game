@@ -153,6 +153,7 @@
     <ClCompile Include="RandomGenerator.cpp" />
     <ClCompile Include="CircularSaw.cpp" />
     <ClCompile Include="Snake.cpp" />
+    <ClCompile Include="TestMenuModule.cpp" />
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="Transform.cpp" />
     <ClCompile Include="Wall.cpp" />
@@ -187,6 +188,7 @@
     <ClInclude Include="CircularSaw.h" />
     <ClInclude Include="Snake.h" />
     <ClInclude Include="StaticObjects.h" />
+    <ClInclude Include="TestMenuModule.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="Transform.h" />
     <ClInclude Include="Wall.h" />

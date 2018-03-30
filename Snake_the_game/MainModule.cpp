@@ -5,11 +5,8 @@ MainModule::MainModule() {
 }
 
 void MainModule::processInput(const sf::Keyboard::Key& key) {
-	if (key == sf::Keyboard::D) {
-		m_object->transform()->move(4.0f, 0.0f);
-	}
-	else if (key == sf::Keyboard::W) {
-		m_object->transform()->rotate(2.0f);
+	if (key == sf::Keyboard::I) {
+		_GameManager.pushModule(std::make_unique<TestMenuModule>());
 	}
 }
 

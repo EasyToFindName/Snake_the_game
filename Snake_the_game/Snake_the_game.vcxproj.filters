@@ -168,6 +168,9 @@
     <ClCompile Include="Cubeckiy.cpp">
       <Filter>Component System\GameObjects\Test</Filter>
     </ClCompile>
+    <ClCompile Include="TestMenuModule.cpp">
+      <Filter>Component System\Modules</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Interfaces.h">
@@ -265,6 +268,9 @@
     </ClInclude>
     <ClInclude Include="Cubeckiy.h">
       <Filter>Component System\GameObjects\Test</Filter>
+    </ClInclude>
+    <ClInclude Include="TestMenuModule.h">
+      <Filter>Component System\Modules</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
