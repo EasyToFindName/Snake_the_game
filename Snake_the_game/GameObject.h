@@ -45,10 +45,7 @@ T* GameObject::addComponent()
 {
 	unsigned index = COMPONENT_VALUE(T);
 
-	if (index >= COMPONENT_MAX)
-		throw std::out_of_range("Out of component list");
-
-	auto component = std::unique_ptr<T>(new T(this));
+	auto component = std::make_unique<T>(this);
 	auto componentAddr = component.get();
 
 	m_components[index].push_back(std::move(component));
@@ -61,10 +58,7 @@ T* GameObject::getComponent()
 {
 	unsigned index = COMPONENT_VALUE(T);
 
-	if (index >= m_components.size())
-		throw std::out_of_range("Out of component list");
-
-	if (m_components[index].empty())
+	if (m_components.at(index).empty())
 		return nullptr;
 
 	return convertComponent<T>(m_components[index].at(0).get());
@@ -75,11 +69,8 @@ std::vector<T*> GameObject::getComponents()
 {
 	unsigned index = COMPONENT_VALUE(T);
 
-	if (index >= m_components.size())
-		throw std::out_of_range("Out of component list");
-
 	std::vector<T*> comps;
-	comps.reserve((m_components[index].size()));
+	comps.reserve((m_components.at(index).size()));
 
 	for (auto &ptr : m_components[index]) {
 		comps.push_back(convertComponent<T>(ptr.get()));

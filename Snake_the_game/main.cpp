@@ -123,7 +123,7 @@ int main() {
 	sf::RenderWindow window(sf::VideoMode(640, 480), "Snake game", sf::Style::Close);
 	window.setVerticalSyncEnabled(true);
 	
-	_GameManager.pushModule(std::unique_ptr<Module>(new MainModule));
+	_GameManager.pushModule(std::make_unique<MainModule>());
 	
 
 	while (window.isOpen()) {
