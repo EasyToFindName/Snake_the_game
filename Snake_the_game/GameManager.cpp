@@ -21,6 +21,14 @@ void GameManager::run(const sf::Time & dt) {
 	}
 }
 
+void GameManager::updatePhysics()
+{
+	Module* activeModule = topModule();
+	if (activeModule) {
+		activeModule->physicsUpdate();
+	}
+}
+
 void GameManager::draw(sf::RenderTarget & target, sf::RenderStates states) {
 	for (auto& mod : m_moduleStack) {
 		mod->renderManager.draw(target, states);

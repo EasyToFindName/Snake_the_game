@@ -13,6 +13,7 @@ public:
 
 	void processInput(const sf::Keyboard::Key& key);
 	void run(const sf::Time& dt);
+	void updatePhysics();
 	void draw(sf::RenderTarget& target, sf::RenderStates states);
 
 	void pushModule(std::unique_ptr<Module>&& mod);

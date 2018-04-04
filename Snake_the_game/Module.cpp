@@ -3,9 +3,18 @@
 
 
 
-Module::Module(Module* parent) : m_parent(parent) {
+Module::Module(Module* parent) : m_parent(parent) 
+{
 
 }
 
-Module::~Module() {}
+Module::~Module() 
+{
+
+}
+
+void Module::physicsUpdate()
+{
+	physicsManager.update();
+}
 

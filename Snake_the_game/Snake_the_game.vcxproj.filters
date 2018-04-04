@@ -94,6 +94,12 @@
     <Filter Include="Component System\GameObjects\Test">
       <UniqueIdentifier>{bdf70961-b48d-454b-9677-d000f99363eb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Component System\Components\Collider">
+      <UniqueIdentifier>{377d98f3-1bc9-44a9-871f-5b544ef0c2e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component System\Components\Collider\Forms">
+      <UniqueIdentifier>{58924b3a-8080-4752-80ce-d09116ed4563}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Point.cpp">
@@ -170,6 +176,15 @@
     </ClCompile>
     <ClCompile Include="TestMenuModule.cpp">
       <Filter>Component System\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="Collider.cpp">
+      <Filter>Component System\Components\Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysicsQuad.cpp">
+      <Filter>Component System\Components\Collider\Forms</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysicsManager.cpp">
+      <Filter>Component System\Managers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -271,6 +286,18 @@
     </ClInclude>
     <ClInclude Include="TestMenuModule.h">
       <Filter>Component System\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Collider.h">
+      <Filter>Component System\Components\Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicsForm.h">
+      <Filter>Component System\Components\Collider\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicsQuad.h">
+      <Filter>Component System\Components\Collider\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicsManager.h">
+      <Filter>Component System\Managers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -13,11 +13,12 @@ Renderer::Renderer(GameObject* gameObject) : Component(gameObject)
 
 Renderer::~Renderer()
 {
-	Module* activeModule = _GameManager.topModule();
+	/*Module* activeModule = _GameManager.topModule();
 
 	if (activeModule) {
 		activeModule->renderManager.removeRenderer(this);
-	}
+	}*/
+	m_gameObject->currentModule()->renderManager.removeRenderer(this);
 }
 
 void Renderer::draw(sf::RenderTarget & target, sf::RenderStates states)

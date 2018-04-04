@@ -142,6 +142,7 @@ int main() {
 		}
 
 		//_GameManager.run(dt);
+		_GameManager.updatePhysics();
 
 		window.clear(DrawConfig::BACKGROUND_COLOR);
 		_GameManager.draw(window, sf::RenderStates::Default);

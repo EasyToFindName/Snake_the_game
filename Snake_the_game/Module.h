@@ -1,7 +1,8 @@
 #pragma once
+#include <SFML\System.hpp>
 
 #include "RenderManager.h"
-#include <SFML\System.hpp>
+#include "PhysicsManager.h"
 
 class Module {
 public:
@@ -9,7 +10,10 @@ public:
 	virtual ~Module();
 	virtual void processInput(const sf::Keyboard::Key& key) = 0;
 	virtual void run(const sf::Time& dt) = 0;
+	void physicsUpdate();
+	
 	RenderManager renderManager;
+	PhysicsManager physicsManager;
 private:
 	Module* m_parent;
 };

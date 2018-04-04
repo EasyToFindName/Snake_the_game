@@ -132,6 +132,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Collider.cpp" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="Cubeckiy.cpp" />
     <ClCompile Include="Direction.cpp" />
@@ -145,6 +146,8 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MapBuilder.cpp" />
     <ClCompile Include="Module.cpp" />
+    <ClCompile Include="PhysicsManager.cpp" />
+    <ClCompile Include="PhysicsQuad.cpp" />
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="RenderManager.cpp" />
     <ClCompile Include="StaticObject.cpp" />
@@ -159,6 +162,7 @@
     <ClCompile Include="Wall.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Collider.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="CompReg.h" />
     <ClInclude Include="Cubeckiy.h" />
@@ -179,6 +183,9 @@
     <ClInclude Include="Interfaces.h" />
     <ClInclude Include="MapBuilder.h" />
     <ClInclude Include="Module.h" />
+    <ClInclude Include="PhysicsForm.h" />
+    <ClInclude Include="PhysicsManager.h" />
+    <ClInclude Include="PhysicsQuad.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="RenderManager.h" />
     <ClInclude Include="StaticObject.h" />
