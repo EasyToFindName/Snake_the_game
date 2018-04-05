@@ -29,3 +29,13 @@ PhysicsForm * Collider::getForm() const
 {
 	return m_form.get();
 }
+
+void Collider::update()
+{
+	m_form->update(m_gameObject->transform()->getPosition());
+}
+
+void Collider::onCollision(const Collider & collider)
+{
+	m_gameObject->onCollision(*collider.m_gameObject);
+}

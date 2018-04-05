@@ -29,6 +29,7 @@ public:
 
 	virtual void run(const sf::Time& dt) {};
 	virtual GameObject* clone() = 0;
+	virtual void onCollision(const GameObject& gameObject) = 0;
 protected:
 	template<typename T>
 	T* convertComponent(Component* comp) const;

@@ -7,7 +7,7 @@ public:
 	Cubeckiy(Module* mod);
 	~Cubeckiy();
 
-
+	virtual void onCollision(const GameObject& gameObject) override;
 	virtual GameObject* clone() override;
 };
 

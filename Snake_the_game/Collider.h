@@ -14,6 +14,9 @@ public:
 	void setForm(PhysicsForm* newForm);
 	PhysicsForm * getForm() const;
 
+	void update();
+	void onCollision(const Collider& collider);
+
 private:
 	std::unique_ptr<PhysicsForm> m_form;
 

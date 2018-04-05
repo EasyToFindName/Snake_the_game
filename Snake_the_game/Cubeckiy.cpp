@@ -15,6 +15,11 @@ Cubeckiy::~Cubeckiy()
 {
 }
 
+void Cubeckiy::onCollision(const GameObject & gameObject)
+{
+	std::cout << "Collision!" << std::endl;
+}
+
 GameObject * Cubeckiy::clone()
 {
 	Cubeckiy* cube = new Cubeckiy(currentModule());

@@ -1,5 +1,5 @@
 #pragma once
-
+#include <SFML\Graphics.hpp>
 class PhysicsQuad;
 
 class PhysicsForm {
@@ -8,6 +8,7 @@ public:
 	virtual ~PhysicsForm() = default;
 
 	virtual PhysicsForm* clone() = 0;
+	virtual void update(const sf::Vector2f& newPos) = 0;
 
 	virtual bool isIntersect(const PhysicsForm& form) const = 0;
 	virtual bool isIntersect(const PhysicsQuad& form) const = 0;

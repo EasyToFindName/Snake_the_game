@@ -24,18 +24,26 @@ void PhysicsManager::removeCollider(Collider * collider)
 
 void PhysicsManager::update()
 {
+	//UPDATE
+	for (auto& collider : colliders) {
+		collider->update();
+	}
+
 	//COLLISION DETECTION
 	for (size_t i = 0; i < colliders.size(); i++) {
 
 		if (!colliders[i]->getForm()) continue;
 
-		for (size_t j = i; j < colliders.size(); j++) {
+		for (size_t j = i + 1; j < colliders.size(); j++) {
 
 			if (!colliders[j]->getForm()) continue;
 
 			//IF COLLIDERS FORMS INTERSECT
 			if (colliders[i]->getForm()->isIntersect(*colliders[j]->getForm())) {
-				std::cout << "Collision!" << std::endl;
+
+				colliders[i]->onCollision(*colliders[j]);
+				colliders[j]->onCollision(*colliders[i]);
+
 			}
 		}
 	}
