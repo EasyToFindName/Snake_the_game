@@ -4,6 +4,7 @@
 Collider::Collider(GameObject* gameObject) : Component(gameObject) 
 {
 	gameObject->currentModule()->physicsManager.addCollider(this);
+	m_layer = 0;
 }
 
 Collider::~Collider()
@@ -16,6 +17,7 @@ Component * Collider::clone(GameObject * gameObject)
 	Collider* component = new Collider(gameObject);
 
 	component->setForm(m_form.get()->clone());
+	component->setLayer(m_layer);
 
 	return component;
 }
@@ -38,4 +40,14 @@ void Collider::update()
 void Collider::onCollision(const Collider & collider)
 {
 	m_gameObject->onCollision(*collider.m_gameObject);
+}
+
+void Collider::setLayer(unsigned long layer)
+{
+	m_layer = layer;
+}
+
+unsigned long Collider::getLayer() const
+{
+	return m_layer;
 }

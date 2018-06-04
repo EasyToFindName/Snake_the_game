@@ -38,6 +38,16 @@ void PhysicsQuad::update(const sf::Vector2f& newPos)
 	m_globalRect.top = newPos.y + m_rect.top;
 }
 
+bool PhysicsQuad::isContain(sf::Vector2f point) const
+{
+	return isContain(point.x, point.y);
+}
+
+bool PhysicsQuad::isContain(double x, double y) const
+{
+	return m_globalRect.contains(x, y);
+}
+
 bool PhysicsQuad::isIntersect(const PhysicsQuad & form) const
 {
 	auto a = this->getRect();

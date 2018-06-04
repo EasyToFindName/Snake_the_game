@@ -13,39 +13,76 @@ PhysicsManager::~PhysicsManager()
 
 void PhysicsManager::addCollider(Collider * collider)
 {
-	colliders.push_back(collider);
+	m_colliders.push_back(collider);
 }
 
 void PhysicsManager::removeCollider(Collider * collider)
 {
-	auto it = std::find(colliders.begin(), colliders.end(), collider);
-	colliders.erase(it);
+	auto it = std::find(m_colliders.begin(), m_colliders.end(), collider);
+	m_colliders.erase(it);
 }
 
 void PhysicsManager::update()
 {
 	//UPDATE
-	for (auto& collider : colliders) {
+	for (auto& collider : m_colliders) {
 		collider->update();
 	}
 
 	//COLLISION DETECTION
-	for (size_t i = 0; i < colliders.size(); i++) {
+	for (size_t i = 0; i < m_colliders.size(); i++) {
 
-		if (!colliders[i]->getForm()) continue;
+		if (!m_colliders[i]->getForm()) continue;
 
-		for (size_t j = i + 1; j < colliders.size(); j++) {
+		for (size_t j = i + 1; j < m_colliders.size(); j++) {
 
-			if (!colliders[j]->getForm()) continue;
+			if (!m_colliders[j]->getForm()) continue;
 
-			//IF COLLIDERS FORMS INTERSECT
-			if (colliders[i]->getForm()->isIntersect(*colliders[j]->getForm())) {
+			//IF m_colliders FORMS INTERSECT
+			if (m_colliders[i]->getForm()->isIntersect(*m_colliders[j]->getForm())) {
 
-				colliders[i]->onCollision(*colliders[j]);
-				colliders[j]->onCollision(*colliders[i]);
+				m_colliders[i]->onCollision(*m_colliders[j]);
+				m_colliders[j]->onCollision(*m_colliders[i]);
 
 			}
 		}
 	}
 
+}
+
+std::vector<Collider*> PhysicsManager::getCollidersAtPoint(sf::Vector2f point, unsigned long maskLayer)
+{
+	return getCollidersAtPoint(point.x, point.y, maskLayer);
+}
+
+std::vector<Collider*> PhysicsManager::getCollidersAtPoint(double x, double y, unsigned long maskLayer)
+{
+	std::vector<Collider*> colliders;
+
+	for (auto& collider : m_colliders) {
+		if (checkLayer(collider->getLayer(), maskLayer) && collider->getForm()->isContain(x, y)) {
+			colliders.push_back(collider);
+		}
+	}
+	return colliders;
+}
+
+bool PhysicsManager::isPointFree(sf::Vector2f point, unsigned long maskLayer)
+{
+	return isPointFree(point.x, point.y, maskLayer);
+}
+
+bool PhysicsManager::isPointFree(double x, double y, unsigned long maskLayer)
+{
+	for (auto& collider : m_colliders) {
+		if (checkLayer(collider->getLayer(), maskLayer) && collider->getForm()->isContain(x, y)) {
+			return true;
+		}
+	}
+	return false;
+}
+
+bool PhysicsManager::checkLayer(unsigned long a, unsigned long b)
+{
+	return (a & b) == b || (a & b) == a;
 }

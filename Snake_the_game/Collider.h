@@ -17,7 +17,12 @@ public:
 	void update();
 	void onCollision(const Collider& collider);
 
+	void setLayer(unsigned long layer);
+	unsigned long getLayer() const;
+
+
 private:
 	std::unique_ptr<PhysicsForm> m_form;
+	unsigned long m_layer;
 
 END_COMPONENT(Collider)

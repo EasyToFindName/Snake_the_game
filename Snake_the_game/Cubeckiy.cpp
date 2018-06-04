@@ -17,7 +17,7 @@ Cubeckiy::~Cubeckiy()
 
 void Cubeckiy::onCollision(const GameObject & gameObject)
 {
-	std::cout << "Collision!" << std::endl;
+	std::cout << "Collision" << std::endl;
 }
 
 GameObject * Cubeckiy::clone()

@@ -15,6 +15,9 @@ public:
 
 	virtual void update(const sf::Vector2f& newPos) override;
 
+	virtual bool isContain(sf::Vector2f point) const override;
+	virtual bool isContain(double x, double y) const override;
+
 	virtual bool isIntersect(const PhysicsForm& form) const override;
 	virtual bool isIntersect(const PhysicsQuad& form) const override;
 
