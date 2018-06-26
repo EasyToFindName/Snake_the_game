@@ -1,8 +1,10 @@
 #include "MainModule.h"
 
+#include "Apple.h"
 
 MainModule::MainModule() {
 	m_snakeHead = Instantiate<SnakeHead>();
+	Instantiate<Apple>();
 }
 
 void MainModule::processInput(const sf::Keyboard::Key& key) {

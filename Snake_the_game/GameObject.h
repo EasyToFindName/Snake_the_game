@@ -30,15 +30,20 @@ public:
 	virtual void run(float dt) {};
 	virtual GameObject* clone() = 0;
 	virtual void onCollision(const GameObject& gameObject) = 0;
+
+	std::string getTag() const;
+
 protected:
 	template<typename T>
 	T* convertComponent(Component* comp) const;
 
 	void copyComponentsTo(GameObject& object) const;
+	void setTag(const std::string& tag);
 
 private: 
 	std::unordered_map<unsigned, std::vector<std::unique_ptr<Component>>> m_components;
 	Module* m_module;
+	std::string m_tag;
 };
 
 template<typename T>

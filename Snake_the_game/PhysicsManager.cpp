@@ -50,39 +50,39 @@ void PhysicsManager::update()
 
 }
 
-std::vector<Collider*> PhysicsManager::getCollidersAtPoint(sf::Vector2f point, unsigned long maskLayer)
+std::vector<Collider*> PhysicsManager::getCollidersAtPoint(sf::Vector2f point, PhysicLayer maskLayer)
 {
 	return getCollidersAtPoint(point.x, point.y, maskLayer);
 }
 
-std::vector<Collider*> PhysicsManager::getCollidersAtPoint(double x, double y, unsigned long maskLayer)
+std::vector<Collider*> PhysicsManager::getCollidersAtPoint(double x, double y, PhysicLayer maskLayer)
 {
 	std::vector<Collider*> colliders;
 
 	for (auto& collider : m_colliders) {
-		if (checkLayer(collider->getLayer(), maskLayer) && collider->getForm()->isContain(x, y)) {
+		if (checkLayer(collider->getLayer(), maskLayer) && !collider->getForm()->isContain(x, y)) {
 			colliders.push_back(collider);
 		}
 	}
 	return colliders;
 }
 
-bool PhysicsManager::isPointFree(sf::Vector2f point, unsigned long maskLayer)
+bool PhysicsManager::isPointFree(sf::Vector2f point, PhysicLayer maskLayer)
 {
 	return isPointFree(point.x, point.y, maskLayer);
 }
 
-bool PhysicsManager::isPointFree(double x, double y, unsigned long maskLayer)
+bool PhysicsManager::isPointFree(double x, double y, PhysicLayer maskLayer)
 {
 	for (auto& collider : m_colliders) {
-		if (checkLayer(collider->getLayer(), maskLayer) && collider->getForm()->isContain(x, y)) {
+		if (checkLayer(collider->getLayer(), maskLayer) && !collider->getForm()->isContain(x, y)) {
 			return true;
 		}
 	}
 	return false;
 }
 
-bool PhysicsManager::checkLayer(unsigned long a, unsigned long b)
+bool PhysicsManager::checkLayer(PhysicLayer a, PhysicLayer b)
 {
 	return (a & b) == b || (a & b) == a;
 }

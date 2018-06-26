@@ -3,6 +3,7 @@
 #include <vector>
 
 class Collider;
+using PhysicLayer = unsigned long;
 
 class PhysicsManager {
 public:
@@ -17,13 +18,14 @@ public:
 
 	void update();
 
-	std::vector<Collider*> getCollidersAtPoint(sf::Vector2f point, unsigned long maskLayer = 0);
-	std::vector<Collider*> getCollidersAtPoint(double x, double y, unsigned long maskLayer = 0);
+	std::vector<Collider*> getCollidersAtPoint(sf::Vector2f point, PhysicLayer maskLayer = 0);
+	std::vector<Collider*> getCollidersAtPoint(double x, double y, PhysicLayer maskLayer = 0);
 
-	bool isPointFree(sf::Vector2f point, unsigned long maskLayer = 0);
-	bool isPointFree(double x, double y, unsigned long maskLayer = 0);
+	bool isPointFree(sf::Vector2f point, PhysicLayer maskLayer = 0);
+	bool isPointFree(double x, double y, PhysicLayer maskLayer = 0);
 
-	static bool checkLayer(unsigned long a, unsigned long b);
+	/*check if "overlayer" contain layer*/
+	static bool checkLayer(PhysicLayer a, PhysicLayer b);
 
 private:
 	std::vector<Collider*> m_colliders;

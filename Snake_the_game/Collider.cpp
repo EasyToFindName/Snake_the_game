@@ -42,12 +42,12 @@ void Collider::onCollision(const Collider & collider)
 	m_gameObject->onCollision(*collider.m_gameObject);
 }
 
-void Collider::setLayer(unsigned long layer)
+void Collider::setLayer(PhysicLayer layer)
 {
 	m_layer = layer;
 }
 
-unsigned long Collider::getLayer() const
+PhysicLayer Collider::getLayer() const
 {
 	return m_layer;
 }

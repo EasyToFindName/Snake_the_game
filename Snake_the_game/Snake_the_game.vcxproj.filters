@@ -91,9 +91,6 @@
     <Filter Include="Component System\GameObjects">
       <UniqueIdentifier>{d645844b-4ae9-4f5f-ad4f-f24f6f9a307f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Component System\GameObjects\Test">
-      <UniqueIdentifier>{bdf70961-b48d-454b-9677-d000f99363eb}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Component System\Components\Collider">
       <UniqueIdentifier>{377d98f3-1bc9-44a9-871f-5b544ef0c2e8}</UniqueIdentifier>
     </Filter>
@@ -177,9 +174,6 @@
     <ClCompile Include="Module.cpp">
       <Filter>Component System\Modules</Filter>
     </ClCompile>
-    <ClCompile Include="Cubeckiy.cpp">
-      <Filter>Component System\GameObjects\Test</Filter>
-    </ClCompile>
     <ClCompile Include="TestMenuModule.cpp">
       <Filter>Component System\Modules</Filter>
     </ClCompile>
@@ -198,8 +192,11 @@
     <ClCompile Include="SnakeTail.cpp">
       <Filter>Component System\GameObjects\SnakeTest</Filter>
     </ClCompile>
-    <ClCompile Include="math.cpp">
+    <ClCompile Include="Apple.cpp">
       <Filter>LevelObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="math.cpp">
+      <Filter>Component System\Utilities</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -296,9 +293,6 @@
     <ClInclude Include="Module.h">
       <Filter>Component System\Modules</Filter>
     </ClInclude>
-    <ClInclude Include="Cubeckiy.h">
-      <Filter>Component System\GameObjects\Test</Filter>
-    </ClInclude>
     <ClInclude Include="TestMenuModule.h">
       <Filter>Component System\Modules</Filter>
     </ClInclude>
@@ -322,6 +316,9 @@
     </ClInclude>
     <ClInclude Include="math.h">
       <Filter>Component System\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Apple.h">
+      <Filter>Component System\GameObjects\SnakeTest</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

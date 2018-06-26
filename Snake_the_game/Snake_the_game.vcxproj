@@ -132,9 +132,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Apple.cpp" />
     <ClCompile Include="Collider.cpp" />
     <ClCompile Include="Component.cpp" />
-    <ClCompile Include="Cubeckiy.cpp" />
     <ClCompile Include="Direction.cpp" />
     <ClCompile Include="DynamicObject.cpp" />
     <ClCompile Include="Food.cpp" />
@@ -165,10 +165,10 @@
     <ClCompile Include="Wall.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Apple.h" />
     <ClInclude Include="Collider.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="CompReg.h" />
-    <ClInclude Include="Cubeckiy.h" />
     <ClInclude Include="declDynamicObjects.h" />
     <ClInclude Include="declLevelObjects.h" />
     <ClInclude Include="declStaticObjects.h" />

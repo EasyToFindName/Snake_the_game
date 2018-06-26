@@ -4,6 +4,8 @@
 #include "Component.h"
 #include "PhysicsForm.h"
 
+using PhysicLayer = unsigned long;
+
 COMPONENT(Collider)
 public:
 	Collider(GameObject* gameObject);
@@ -17,12 +19,12 @@ public:
 	void update();
 	void onCollision(const Collider& collider);
 
-	void setLayer(unsigned long layer);
-	unsigned long getLayer() const;
+	void setLayer(PhysicLayer layer);
+	PhysicLayer getLayer() const;
 
 
 private:
 	std::unique_ptr<PhysicsForm> m_form;
-	unsigned long m_layer;
+	PhysicLayer m_layer;
 
 END_COMPONENT(Collider)

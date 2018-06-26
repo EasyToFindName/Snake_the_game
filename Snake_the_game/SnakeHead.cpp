@@ -5,6 +5,9 @@
 
 SnakeHead::SnakeHead(Module* mod) : GameObject(mod)
 {
+	//TAG
+	setTag("Snake");
+
 	//FIELDS
 	m_startPos = sf::Vector2f(128, 128);
 	m_size = sf::Vector2i(32, 32);
@@ -27,7 +30,7 @@ SnakeHead::SnakeHead(Module* mod) : GameObject(mod)
 	collider->setForm(new PhysicsQuad(0, 0, m_size.x, m_size.y));
 
 	//TAILS
-	addTail(10);
+	addTail(3);
 }
 
 SnakeHead::~SnakeHead()
@@ -49,6 +52,9 @@ void SnakeHead::processKey(const sf::Keyboard::Key & key)
 	case sf::Keyboard::D:
 		transform()->rotate(m_rotateSpeed);
 		break;
+	case sf::Keyboard::F:
+		addTail(1);
+		break;
 	}
 }
 
@@ -62,6 +68,9 @@ void SnakeHead::run(float dt)
 
 void SnakeHead::onCollision(const GameObject & gameObject)
 {
+	if (gameObject.getTag() == "Apple") {
+		addTail(1);
+	}
 }
 
 GameObject * SnakeHead::clone()
@@ -89,24 +98,26 @@ void SnakeHead::addTail(int count)
 		auto tail = currentModule()->Instantiate<SnakeTail>();
 
 		if (m_tails.empty()) {
-			sf::Vector2f offset =
+			/*sf::Vector2f offset =
 			{
 				cos(transform()->getRotation() / 180.0f * 3.14f) * m_size.x,
 				sin(transform()->getRotation() / 180.0f * 3.14f) * m_size.y
-			};
+			};*/
 
-			tail->transform()->setPosition(transform()->getPosition() - offset); 
-			
+			tail->transform()->setPosition(transform()->getPosition()/* - offset*/); 
+			tail->transform()->setRotation(transform()->getRotation());
+
 			tail->setTarget(transform());
 		}
 		else {
-			sf::Vector2f offset =
+			/*sf::Vector2f offset =
 			{
 				cos(m_tails.back()->transform()->getRotation() / 180.0f * 3.14f) * m_size.x,	//size ?
 				sin(m_tails.back()->transform()->getRotation() / 180.0f * 3.14f) * m_size.y
-			};
+			};*/
 
-			tail->transform()->setPosition(m_tails.back()->transform()->getPosition() - offset);
+			tail->transform()->setPosition(m_tails.back()->transform()->getPosition()/* - offset*/);
+			tail->transform()->setRotation(m_tails.back()->transform()->getRotation());
 
 			tail->setTarget(m_tails.back()->transform());
 		}
