@@ -125,11 +125,10 @@ int main() {
 	
 	_GameManager.pushModule(std::make_unique<MainModule>());
 	
-
+	sf::Clock gameClock;
 	while (window.isOpen()) {
-		
 		sf::Event event;
-		
+		auto gameTime = gameClock.restart();
 
 		while (window.pollEvent(event)) {
 			if (event.type == sf::Event::Closed){
@@ -141,8 +140,10 @@ int main() {
 			}
 		}
 
-		//_GameManager.run(dt);
+		//TICK TO DO
+		_GameManager.run(gameTime);
 		_GameManager.updatePhysics();
+		//END
 
 		window.clear(DrawConfig::BACKGROUND_COLOR);
 		_GameManager.draw(window, sf::RenderStates::Default);

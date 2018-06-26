@@ -100,6 +100,12 @@
     <Filter Include="Component System\Components\Collider\Forms">
       <UniqueIdentifier>{58924b3a-8080-4752-80ce-d09116ed4563}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Component System\GameObjects\SnakeTest">
+      <UniqueIdentifier>{0c85a256-ff9d-489b-805f-53b8c5cb7fd8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component System\Utilities">
+      <UniqueIdentifier>{b75f7339-7655-4104-857e-feede02b2620}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Point.cpp">
@@ -185,6 +191,15 @@
     </ClCompile>
     <ClCompile Include="PhysicsManager.cpp">
       <Filter>Component System\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="SnakeHead.cpp">
+      <Filter>Component System\GameObjects\SnakeTest</Filter>
+    </ClCompile>
+    <ClCompile Include="SnakeTail.cpp">
+      <Filter>Component System\GameObjects\SnakeTest</Filter>
+    </ClCompile>
+    <ClCompile Include="math.cpp">
+      <Filter>LevelObjects</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -298,6 +313,15 @@
     </ClInclude>
     <ClInclude Include="PhysicsManager.h">
       <Filter>Component System\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="SnakeHead.h">
+      <Filter>Component System\GameObjects\SnakeTest</Filter>
+    </ClInclude>
+    <ClInclude Include="SnakeTail.h">
+      <Filter>Component System\GameObjects\SnakeTest</Filter>
+    </ClInclude>
+    <ClInclude Include="math.h">
+      <Filter>Component System\Utilities</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

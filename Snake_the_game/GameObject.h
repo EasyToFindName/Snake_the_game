@@ -5,9 +5,9 @@
 
 #include "Transform.h"
 #include "Renderer.h"
-#include "Module.h"
 
 #include <iostream>
+
 
 class GameObject
 {
@@ -27,7 +27,7 @@ public:
 	Transform* transform();
 	Module* currentModule() const;
 
-	virtual void run(const sf::Time& dt) {};
+	virtual void run(float dt) {};
 	virtual GameObject* clone() = 0;
 	virtual void onCollision(const GameObject& gameObject) = 0;
 protected:

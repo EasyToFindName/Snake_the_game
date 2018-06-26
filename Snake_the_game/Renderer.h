@@ -14,6 +14,7 @@ public:
 	virtual ~Renderer();
 
 	bool operator<(const Renderer& renderer);
+	void setSprite(sf::Sprite& sprite);
 
 	virtual Component* clone(GameObject* gameObject) override;
 

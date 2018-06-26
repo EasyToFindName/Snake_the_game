@@ -4,11 +4,6 @@
 Renderer::Renderer(GameObject* gameObject) : Component(gameObject)
 {
 	gameObject->currentModule()->renderManager.addRenderer(this);
-
-	m_sprite = new sf::Sprite();
-	m_sprite->setTexture(sf::Texture());
-	m_sprite->setTextureRect(sf::IntRect(0, 0, 32, 32));
-	m_sprite->setColor(sf::Color::Red);
 }
 
 Renderer::~Renderer()
@@ -40,4 +35,9 @@ Component * Renderer::clone(GameObject * gameObject)
 	component->m_layer = m_layer;
 
 	return component;
+}
+
+void Renderer::setSprite(sf::Sprite &sprite)
+{
+	m_sprite = &sprite;
 }
