@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Module.h"
+#include "BaseScene.h"
 #include <memory>
 
 
@@ -16,14 +16,14 @@ public:
 	void updatePhysics();
 	void draw(sf::RenderTarget& target, sf::RenderStates states);
 
-	void pushModule(std::unique_ptr<Module>&& mod);
+	void pushModule(std::unique_ptr<BaseScene>&& mod);
 	void popModule();
-	void switchModule(std::unique_ptr<Module>&& mod);
-	Module* topModule();
+	void switchModule(std::unique_ptr<BaseScene>&& mod);
+	BaseScene* topModule();
 
 private:
 	static GameManager m_instance;
-	std::vector<std::unique_ptr<Module>> m_moduleStack;
+	std::vector<std::unique_ptr<BaseScene>> m_moduleStack;
 	
 	GameManager();
 	~GameManager();

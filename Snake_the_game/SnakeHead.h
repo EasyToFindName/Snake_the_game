@@ -6,7 +6,7 @@
 class SnakeHead : public GameObject
 {
 public:
-	SnakeHead(Module* mod);
+	SnakeHead(BaseScene* mod);
 	~SnakeHead();
 
 	void processKey(const sf::Keyboard::Key& key);
@@ -22,6 +22,8 @@ private:
 	sf::Vector2i m_size;
 	sf::Vector2f m_startPos;
 	float m_speed, m_rotateSpeed, m_smoothFactor;
+
+	sf::View m_camera;
 
 	std::vector<SnakeTail*> m_tails;
 };

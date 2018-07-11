@@ -4,7 +4,7 @@
 
 #include "math.h"
 
-SnakeTail::SnakeTail(Module * mod) : GameObject(mod)
+SnakeTail::SnakeTail(BaseScene * mod) : GameObject(mod)
 {
 	//FIELDS
 	m_size = sf::Vector2i(32, 32);
@@ -32,7 +32,7 @@ void SnakeTail::onCollision(const GameObject & gameObject)
 
 GameObject * SnakeTail::clone()
 {
-	SnakeTail* tail = new SnakeTail(currentModule());
+	SnakeTail* tail = new SnakeTail(currentScene());
 	copyComponentsTo(*tail);
 
 	return tail;

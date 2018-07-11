@@ -1,8 +1,8 @@
 #include "GameObject.h"
 
-GameObject::GameObject(Module* mod)
+GameObject::GameObject(BaseScene* mod)
 {
-	m_module = mod;
+	m_scene = mod;
 	addComponent<Transform>();
 	setTag("Nan");
 }
@@ -16,9 +16,9 @@ Transform* GameObject::transform()
 	return getComponent<Transform>();
 }
 
-Module * GameObject::currentModule() const
+BaseScene * GameObject::currentScene() const
 {
-	return m_module;
+	return m_scene;
 }
 
 std::string GameObject::getTag() const

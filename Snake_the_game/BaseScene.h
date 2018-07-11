@@ -4,14 +4,16 @@
 #include "RenderManager.h"
 #include "PhysicsManager.h"
 
+#include "Camera.h"
+
 class GameObject;
 
-class Module {
+class BaseScene {
 public:
-	explicit Module(Module* parent = nullptr);
-	virtual ~Module();
+	explicit BaseScene(sf::RenderWindow& window);
+	virtual ~BaseScene();
 	virtual void processInput(const sf::Keyboard::Key& key) = 0;
-	virtual void run(const sf::Time& dt) = 0;
+	virtual void run(const sf::Time& dt);
 	void physicsUpdate();
 
 	template<typename OBJECT_TYPE>
@@ -22,15 +24,18 @@ public:
 	RenderManager renderManager;
 	PhysicsManager physicsManager;
 
+	Camera& mainCamera() const;
+
 protected:
 	std::vector<std::unique_ptr<GameObject>> m_gameObjects;
 
 private:
-	Module* m_parent;
+	sf::RenderWindow* m_window;
+	std::unique_ptr<Camera> m_camera;
 };
 
 template<typename OBJECT_TYPE>
-inline OBJECT_TYPE * Module::Instantiate(/*sf::Vector2f position*/)
+inline OBJECT_TYPE * BaseScene::Instantiate(/*sf::Vector2f position*/)
 {
 	m_gameObjects.emplace_back(std::make_unique<OBJECT_TYPE>(this));
 	//m_gameObjects.back()->transform()->setPosition(position);

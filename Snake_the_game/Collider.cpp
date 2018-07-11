@@ -3,13 +3,13 @@
 
 Collider::Collider(GameObject* gameObject) : Component(gameObject) 
 {
-	gameObject->currentModule()->physicsManager.addCollider(this);
+	gameObject->currentScene()->physicsManager.addCollider(this);
 	m_layer = 0;
 }
 
 Collider::~Collider()
 {
-	m_gameObject->currentModule()->physicsManager.removeCollider(this);
+	m_gameObject->currentScene()->physicsManager.removeCollider(this);
 }
 
 Component * Collider::clone(GameObject * gameObject)

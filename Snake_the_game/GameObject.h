@@ -12,7 +12,7 @@
 class GameObject
 {
 public:
-	GameObject(Module* mod);
+	GameObject(BaseScene* mod);
 	virtual ~GameObject();
 
 	template<typename T>
@@ -25,7 +25,7 @@ public:
 	std::vector<T*> getComponents();
 
 	Transform* transform();
-	Module* currentModule() const;
+	BaseScene* currentScene() const;
 
 	virtual void run(float dt) {};
 	virtual GameObject* clone() = 0;
@@ -42,7 +42,7 @@ protected:
 
 private: 
 	std::unordered_map<unsigned, std::vector<std::unique_ptr<Component>>> m_components;
-	Module* m_module;
+	BaseScene* m_scene;
 	std::string m_tag;
 };
 

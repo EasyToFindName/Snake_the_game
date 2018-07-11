@@ -133,6 +133,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Apple.cpp" />
+    <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Collider.cpp" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="Direction.cpp" />
@@ -141,12 +142,12 @@
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="LevelController.cpp" />
-    <ClCompile Include="MainModule.cpp" />
+    <ClCompile Include="MainScene.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MapBuilder.cpp" />
     <ClCompile Include="math.cpp" />
-    <ClCompile Include="Module.cpp" />
+    <ClCompile Include="BaseScene.cpp" />
     <ClCompile Include="PhysicsManager.cpp" />
     <ClCompile Include="PhysicsQuad.cpp" />
     <ClCompile Include="Renderer.cpp" />
@@ -159,13 +160,13 @@
     <ClCompile Include="RandomGenerator.cpp" />
     <ClCompile Include="CircularSaw.cpp" />
     <ClCompile Include="Snake.cpp" />
-    <ClCompile Include="TestMenuModule.cpp" />
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="Transform.cpp" />
     <ClCompile Include="Wall.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Apple.h" />
+    <ClInclude Include="Camera.h" />
     <ClInclude Include="Collider.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="CompReg.h" />
@@ -181,12 +182,12 @@
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="LevelController.h" />
     <ClInclude Include="LevelObjects.h" />
-    <ClInclude Include="MainModule.h" />
+    <ClInclude Include="MainScene.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="Interfaces.h" />
     <ClInclude Include="MapBuilder.h" />
     <ClInclude Include="math.h" />
-    <ClInclude Include="Module.h" />
+    <ClInclude Include="BaseScene.h" />
     <ClInclude Include="PhysicsForm.h" />
     <ClInclude Include="PhysicsManager.h" />
     <ClInclude Include="PhysicsQuad.h" />
@@ -201,7 +202,6 @@
     <ClInclude Include="CircularSaw.h" />
     <ClInclude Include="Snake.h" />
     <ClInclude Include="StaticObjects.h" />
-    <ClInclude Include="TestMenuModule.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="Transform.h" />
     <ClInclude Include="Wall.h" />

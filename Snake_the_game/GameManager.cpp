@@ -8,14 +8,14 @@ GameManager& GameManager::getInstance()
 }
 
 void GameManager::processInput(const sf::Keyboard::Key & key) {
-	Module* activeModule = topModule();
+	BaseScene* activeModule = topModule();
 	if (activeModule) {
 		activeModule->processInput(key);
 	}
 }
 
 void GameManager::run(const sf::Time & dt) {
-	Module* activeModule = topModule();
+	BaseScene* activeModule = topModule();
 	if (activeModule) {
 		activeModule->run(dt);
 	}
@@ -23,7 +23,7 @@ void GameManager::run(const sf::Time & dt) {
 
 void GameManager::updatePhysics()
 {
-	Module* activeModule = topModule();
+	BaseScene* activeModule = topModule();
 	if (activeModule) {
 		activeModule->physicsUpdate();
 	}
@@ -35,7 +35,7 @@ void GameManager::draw(sf::RenderTarget & target, sf::RenderStates states) {
 	}
 }
 
-void GameManager::pushModule(std::unique_ptr<Module>&& mod) {
+void GameManager::pushModule(std::unique_ptr<BaseScene>&& mod) {
 	m_moduleStack.push_back(std::move(mod));
 }
 
@@ -45,12 +45,12 @@ void GameManager::popModule() {
 	}
 }
 
-void GameManager::switchModule(std::unique_ptr<Module>&& mod) {
+void GameManager::switchModule(std::unique_ptr<BaseScene>&& mod) {
 	m_moduleStack.clear();
 	m_moduleStack.push_back(std::move(mod));
 }
 
-Module * GameManager::topModule() {
+BaseScene * GameManager::topModule() {
 	if(m_moduleStack.empty())
 		return nullptr;
 

@@ -168,15 +168,6 @@
     <ClCompile Include="Renderer.cpp">
       <Filter>Component System\Components</Filter>
     </ClCompile>
-    <ClCompile Include="MainModule.cpp">
-      <Filter>Component System\Modules</Filter>
-    </ClCompile>
-    <ClCompile Include="Module.cpp">
-      <Filter>Component System\Modules</Filter>
-    </ClCompile>
-    <ClCompile Include="TestMenuModule.cpp">
-      <Filter>Component System\Modules</Filter>
-    </ClCompile>
     <ClCompile Include="Collider.cpp">
       <Filter>Component System\Components\Collider</Filter>
     </ClCompile>
@@ -192,11 +183,20 @@
     <ClCompile Include="SnakeTail.cpp">
       <Filter>Component System\GameObjects\SnakeTest</Filter>
     </ClCompile>
-    <ClCompile Include="Apple.cpp">
-      <Filter>LevelObjects</Filter>
-    </ClCompile>
     <ClCompile Include="math.cpp">
       <Filter>Component System\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="Apple.cpp">
+      <Filter>Component System\GameObjects\SnakeTest</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseScene.cpp">
+      <Filter>Component System\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="MainScene.cpp">
+      <Filter>Component System\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>LevelObjects</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -287,15 +287,6 @@
     <ClInclude Include="CompReg.h">
       <Filter>Component System\Meta</Filter>
     </ClInclude>
-    <ClInclude Include="MainModule.h">
-      <Filter>Component System\Modules</Filter>
-    </ClInclude>
-    <ClInclude Include="Module.h">
-      <Filter>Component System\Modules</Filter>
-    </ClInclude>
-    <ClInclude Include="TestMenuModule.h">
-      <Filter>Component System\Modules</Filter>
-    </ClInclude>
     <ClInclude Include="Collider.h">
       <Filter>Component System\Components\Collider</Filter>
     </ClInclude>
@@ -319,6 +310,15 @@
     </ClInclude>
     <ClInclude Include="Apple.h">
       <Filter>Component System\GameObjects\SnakeTest</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseScene.h">
+      <Filter>Component System\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="MainScene.h">
+      <Filter>Component System\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Component System</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

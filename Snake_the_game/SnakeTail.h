@@ -3,7 +3,7 @@
 
 class SnakeTail : public GameObject {
 public:
-	SnakeTail(Module* mod);
+	SnakeTail(BaseScene* mod);
 	~SnakeTail();
 
 	virtual void onCollision(const GameObject& gameObject) override;

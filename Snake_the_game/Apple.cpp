@@ -3,7 +3,7 @@
 #include "Collider.h"
 #include "PhysicsQuad.h"
 
-Apple::Apple(Module * mod) : GameObject(mod)
+Apple::Apple(BaseScene * mod) : GameObject(mod)
 {
 	//TAG
 	setTag("Apple");
@@ -39,7 +39,7 @@ void Apple::onCollision(const GameObject & gameObject)
 
 GameObject * Apple::clone()
 {
-	Apple* apple = new Apple(currentModule());
+	Apple* apple = new Apple(currentScene());
 	copyComponentsTo(*apple);
 
 	return apple;
@@ -51,7 +51,7 @@ void Apple::changePosition()
 	do {
 		position.x =  m_rand.generateInt(0, 400); //TO DO
 		position.y =  m_rand.generateInt(0, 400);
-	} while (!currentModule()->physicsManager.isPointFree(position));
+	} while (!currentScene()->physicsManager.isPointFree(position));
 
 	transform()->setPosition(position);
 }

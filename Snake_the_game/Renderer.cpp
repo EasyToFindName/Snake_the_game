@@ -3,7 +3,7 @@
 
 Renderer::Renderer(GameObject* gameObject) : Component(gameObject)
 {
-	gameObject->currentModule()->renderManager.addRenderer(this);
+	gameObject->currentScene()->renderManager.addRenderer(this);
 }
 
 Renderer::~Renderer()
@@ -13,7 +13,7 @@ Renderer::~Renderer()
 	if (activeModule) {
 		activeModule->renderManager.removeRenderer(this);
 	}*/
-	m_gameObject->currentModule()->renderManager.removeRenderer(this);
+	m_gameObject->currentScene()->renderManager.removeRenderer(this);
 }
 
 void Renderer::draw(sf::RenderTarget & target, sf::RenderStates states)

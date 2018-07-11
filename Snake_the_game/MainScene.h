@@ -1,17 +1,14 @@
 #pragma once
 
-#include "Module.h"
+#include "BaseScene.h"
 #include "GameObject.h"
-
-//#include "Cubeckiy.h"
-//#include "TestMenuModule.h" 
 
 #include "SnakeHead.h"
 
-class MainModule : public Module {
+class MainScene : public BaseScene {
 public:
-	MainModule();
-	virtual ~MainModule();
+	MainScene(sf::RenderWindow& window);
+	virtual ~MainScene();
 	virtual void processInput(const sf::Keyboard::Key& key) override;
 	virtual void run(const sf::Time& dt) override;
 

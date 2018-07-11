@@ -113,7 +113,7 @@ int main() {
 	return 0;
 }*/
 
-#include "MainModule.h"
+#include "MainScene.h"
 #include "GameManager.h"
 
 
@@ -123,7 +123,7 @@ int main() {
 	sf::RenderWindow window(sf::VideoMode(640, 480), "Snake game", sf::Style::Close);
 	window.setVerticalSyncEnabled(true);
 	
-	_GameManager.pushModule(std::make_unique<MainModule>());
+	_GameManager.pushModule(std::make_unique<MainScene>(window));
 	
 	sf::Clock gameClock;
 	while (window.isOpen()) {

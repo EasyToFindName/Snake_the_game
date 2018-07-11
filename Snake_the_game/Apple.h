@@ -5,7 +5,7 @@
 class Apple : public GameObject
 {
 public:
-	Apple(Module* mod);
+	Apple(BaseScene* mod);
 	~Apple();
 
 	virtual void onCollision(const GameObject& gameObject) override;

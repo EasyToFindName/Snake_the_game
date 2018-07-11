@@ -3,7 +3,7 @@
 #include "PhysicsQuad.h"
 
 
-SnakeHead::SnakeHead(Module* mod) : GameObject(mod)
+SnakeHead::SnakeHead(BaseScene* mod) : GameObject(mod)
 {
 	//TAG
 	setTag("Snake");
@@ -55,6 +55,9 @@ void SnakeHead::processKey(const sf::Keyboard::Key & key)
 	case sf::Keyboard::F:
 		addTail(1);
 		break;
+	case sf::Keyboard::T:
+		transform()->setPosition(200, 200);
+		break;
 	}
 }
 
@@ -75,7 +78,7 @@ void SnakeHead::onCollision(const GameObject & gameObject)
 
 GameObject * SnakeHead::clone()
 {
-	SnakeHead* head = new SnakeHead(currentModule());
+	SnakeHead* head = new SnakeHead(currentScene());
 	copyComponentsTo(*head);
 
 	return head;
@@ -95,7 +98,7 @@ void SnakeHead::move(float speed)
 void SnakeHead::addTail(int count)
 {
 	for (int i = 0; i < count; i++) {
-		auto tail = currentModule()->Instantiate<SnakeTail>();
+		auto tail = currentScene()->Instantiate<SnakeTail>();
 
 		if (m_tails.empty()) {
 			/*sf::Vector2f offset =
