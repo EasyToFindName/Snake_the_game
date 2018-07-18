@@ -5,7 +5,7 @@
 class Apple : public GameObject
 {
 public:
-	Apple(BaseScene* mod);
+	explicit Apple(BaseScene* mod, const sf::Vector2f& position = { 0.0f, 0.0f }, float angle = 0.0f);
 	~Apple();
 
 	virtual void onCollision(const GameObject& gameObject) override;

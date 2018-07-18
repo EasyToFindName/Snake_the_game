@@ -3,7 +3,7 @@
 #include "PhysicsQuad.h"
 
 
-SnakeHead::SnakeHead(BaseScene* mod) : GameObject(mod)
+SnakeHead::SnakeHead(BaseScene* mod, const sf::Vector2f& position, float angle) : GameObject(mod, position, angle)
 {
 	//TAG
 	setTag("Snake");

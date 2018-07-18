@@ -12,7 +12,7 @@
 class GameObject
 {
 public:
-	GameObject(BaseScene* mod);
+	GameObject(BaseScene* mod, const sf::Vector2f& position = {0.0f, 0.0f}, float angle = 0.0f);
 	virtual ~GameObject();
 
 	template<typename T>

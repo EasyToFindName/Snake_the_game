@@ -196,7 +196,13 @@
       <Filter>Component System\Modules</Filter>
     </ClCompile>
     <ClCompile Include="Camera.cpp">
-      <Filter>LevelObjects</Filter>
+      <Filter>Component System</Filter>
+    </ClCompile>
+    <ClCompile Include="Block.cpp">
+      <Filter>Component System\GameObjects\SnakeTest</Filter>
+    </ClCompile>
+    <ClCompile Include="Saw.cpp">
+      <Filter>Component System\GameObjects\SnakeTest</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -319,6 +325,12 @@
     </ClInclude>
     <ClInclude Include="Camera.h">
       <Filter>Component System</Filter>
+    </ClInclude>
+    <ClInclude Include="Block.h">
+      <Filter>Component System\GameObjects\SnakeTest</Filter>
+    </ClInclude>
+    <ClInclude Include="Saw.h">
+      <Filter>Component System\GameObjects\SnakeTest</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -2,9 +2,10 @@
 #include "GameObject.h"
 
 
-BaseScene::BaseScene(sf::RenderWindow& window) : m_window(&window)
+BaseScene::BaseScene(sf::RenderWindow& window, const sf::Vector2u& size) : m_window(&window)
 {
-	m_camera = std::make_unique<Camera>(window);
+	setSceneSize(size);
+	m_camera = std::make_unique<Camera>(window, *this);
 }
 
 BaseScene::~BaseScene()
@@ -37,5 +38,20 @@ void BaseScene::Destroy(GameObject * obj)
 Camera & BaseScene::mainCamera() const
 {
 	return *m_camera.get();
+}
+
+sf::Vector2u BaseScene::screenSize() const
+{
+	return m_window->getSize();
+}
+
+sf::Vector2u BaseScene::sceneSize() const
+{
+	return m_sceneSize;
+}
+
+void BaseScene::setSceneSize(const sf::Vector2u & size)
+{
+	m_sceneSize = size == sf::Vector2u(0, 0) ? m_window->getSize() : size;
 }
 

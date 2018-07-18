@@ -1,9 +1,28 @@
 #include "MainScene.h"
 #include "Apple.h"
+#include "Block.h"
+#include "Saw.h"
 
-MainScene::MainScene(sf::RenderWindow& window) : BaseScene(window) {
+MainScene::MainScene(sf::RenderWindow& window, const sf::Vector2u& size) : BaseScene(window, size) {
 	m_snakeHead = Instantiate<SnakeHead>();
-	Instantiate<Apple>();
+
+	for (int i = 0; i < 10; ++i) {
+		Instantiate<Apple>();
+	}
+
+	/*CREATE WALLS*/
+	for (int i = 0; i < this->sceneSize().x; i += 32) {
+		Instantiate<Block>({ (float)i, 0.0f });
+		Instantiate<Block>({ (float)i, (float)sceneSize().y - 32 });
+	}
+	for (int i = 0; i < this->sceneSize().y; i += 32) {
+		Instantiate<Block>({ 0.0f, (float)i });
+		Instantiate<Block>({ (float)sceneSize().x - 32, (float)i });
+	}
+	/*************/
+
+	Instantiate<Saw>({256, 256});
+
 
 	mainCamera().setTarget(m_snakeHead);
 }

@@ -6,7 +6,7 @@
 class SnakeHead : public GameObject
 {
 public:
-	SnakeHead(BaseScene* mod);
+	explicit SnakeHead(BaseScene* mod, const sf::Vector2f& position = { 0.0f, 0.0f }, float angle = 0.0f);
 	~SnakeHead();
 
 	void processKey(const sf::Keyboard::Key& key);

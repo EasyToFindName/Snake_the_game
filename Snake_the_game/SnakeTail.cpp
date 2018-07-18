@@ -4,7 +4,7 @@
 
 #include "math.h"
 
-SnakeTail::SnakeTail(BaseScene * mod) : GameObject(mod)
+SnakeTail::SnakeTail(BaseScene * mod, const sf::Vector2f& position, float angle) : GameObject(mod, position, angle)
 {
 	//FIELDS
 	m_size = sf::Vector2i(32, 32);

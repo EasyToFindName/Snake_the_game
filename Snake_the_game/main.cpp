@@ -120,10 +120,13 @@ int main() {
 
 int main() {
 
-	sf::RenderWindow window(sf::VideoMode(640, 480), "Snake game", sf::Style::Close);
+	sf::ContextSettings settings;
+	settings.antialiasingLevel = 4;
+
+	sf::RenderWindow window(sf::VideoMode(640, 480), "Snake game", sf::Style::Close, settings);
 	window.setVerticalSyncEnabled(true);
 	
-	_GameManager.pushModule(std::make_unique<MainScene>(window));
+	_GameManager.pushModule(std::make_unique<MainScene>(window, sf::Vector2u(1000, 1000)));
 	
 	sf::Clock gameClock;
 	while (window.isOpen()) {

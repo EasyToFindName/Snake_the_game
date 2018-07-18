@@ -1,9 +1,14 @@
 #include "GameObject.h"
 
-GameObject::GameObject(BaseScene* mod)
+GameObject::GameObject(BaseScene* mod, const sf::Vector2f& position, float angle)
 {
 	m_scene = mod;
+
 	addComponent<Transform>();
+	transform()->setPosition(position);
+	transform()->setRotation(angle);
+
+
 	setTag("Nan");
 }
 

@@ -133,6 +133,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Apple.cpp" />
+    <ClCompile Include="Block.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Collider.cpp" />
     <ClCompile Include="Component.cpp" />
@@ -152,6 +153,7 @@
     <ClCompile Include="PhysicsQuad.cpp" />
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="RenderManager.cpp" />
+    <ClCompile Include="Saw.cpp" />
     <ClCompile Include="SnakeHead.cpp" />
     <ClCompile Include="SnakeTail.cpp" />
     <ClCompile Include="StaticObject.cpp" />
@@ -166,6 +168,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Apple.h" />
+    <ClInclude Include="Block.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Collider.h" />
     <ClInclude Include="Component.h" />
@@ -193,6 +196,7 @@
     <ClInclude Include="PhysicsQuad.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="RenderManager.h" />
+    <ClInclude Include="Saw.h" />
     <ClInclude Include="SnakeHead.h" />
     <ClInclude Include="SnakeTail.h" />
     <ClInclude Include="StaticObject.h" />

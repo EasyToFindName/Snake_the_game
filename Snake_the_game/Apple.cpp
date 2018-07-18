@@ -3,7 +3,7 @@
 #include "Collider.h"
 #include "PhysicsQuad.h"
 
-Apple::Apple(BaseScene * mod) : GameObject(mod)
+Apple::Apple(BaseScene * mod, const sf::Vector2f& position, float angle) : GameObject(mod, position, angle)
 {
 	//TAG
 	setTag("Apple");
@@ -47,10 +47,12 @@ GameObject * Apple::clone()
 
 void Apple::changePosition()
 {
+	auto sceneSize = currentScene()->sceneSize();
+
 	sf::Vector2f position;
 	do {
-		position.x =  m_rand.generateInt(0, 400); //TO DO
-		position.y =  m_rand.generateInt(0, 400);
+		position.x =  m_rand.generateInt(0, sceneSize.x);
+		position.y =  m_rand.generateInt(0, sceneSize.y);
 	} while (!currentScene()->physicsManager.isPointFree(position));
 
 	transform()->setPosition(position);
