@@ -138,15 +138,10 @@
     <ClCompile Include="Collider.cpp" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="Direction.cpp" />
-    <ClCompile Include="DynamicObject.cpp" />
-    <ClCompile Include="Food.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="GameObject.cpp" />
-    <ClCompile Include="LevelController.cpp" />
     <ClCompile Include="MainScene.cpp" />
-    <ClCompile Include="Map.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="MapBuilder.cpp" />
     <ClCompile Include="math.cpp" />
     <ClCompile Include="BaseScene.cpp" />
     <ClCompile Include="PhysicsManager.cpp" />
@@ -156,15 +151,10 @@
     <ClCompile Include="Saw.cpp" />
     <ClCompile Include="SnakeHead.cpp" />
     <ClCompile Include="SnakeTail.cpp" />
-    <ClCompile Include="StaticObject.cpp" />
     <ClCompile Include="Point.cpp" />
-    <ClCompile Include="Portal.cpp" />
     <ClCompile Include="RandomGenerator.cpp" />
-    <ClCompile Include="CircularSaw.cpp" />
-    <ClCompile Include="Snake.cpp" />
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="Transform.cpp" />
-    <ClCompile Include="Wall.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Apple.h" />
@@ -173,22 +163,10 @@
     <ClInclude Include="Collider.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="CompReg.h" />
-    <ClInclude Include="declDynamicObjects.h" />
-    <ClInclude Include="declLevelObjects.h" />
-    <ClInclude Include="declStaticObjects.h" />
     <ClInclude Include="Direction.h" />
-    <ClInclude Include="Draw_config.h" />
-    <ClInclude Include="DynamicObject.h" />
-    <ClInclude Include="DynamicObjects.h" />
-    <ClInclude Include="Food.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="GameObject.h" />
-    <ClInclude Include="LevelController.h" />
-    <ClInclude Include="LevelObjects.h" />
     <ClInclude Include="MainScene.h" />
-    <ClInclude Include="Map.h" />
-    <ClInclude Include="Interfaces.h" />
-    <ClInclude Include="MapBuilder.h" />
     <ClInclude Include="math.h" />
     <ClInclude Include="BaseScene.h" />
     <ClInclude Include="PhysicsForm.h" />
@@ -199,16 +177,10 @@
     <ClInclude Include="Saw.h" />
     <ClInclude Include="SnakeHead.h" />
     <ClInclude Include="SnakeTail.h" />
-    <ClInclude Include="StaticObject.h" />
     <ClInclude Include="Point.h" />
-    <ClInclude Include="Portal.h" />
     <ClInclude Include="RandomGenerator.h" />
-    <ClInclude Include="CircularSaw.h" />
-    <ClInclude Include="Snake.h" />
-    <ClInclude Include="StaticObjects.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="Transform.h" />
-    <ClInclude Include="Wall.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

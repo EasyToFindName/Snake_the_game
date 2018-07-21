@@ -5,332 +5,196 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Basics">
-      <UniqueIdentifier>{edf584a4-6b4d-4932-8229-2bf513e46dce}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Basics\Point">
-      <UniqueIdentifier>{d0e6e8db-4240-4034-b3d2-d17578e62280}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Basics\Direction">
-      <UniqueIdentifier>{afa7fe8f-b515-44dc-8e15-5e5068a9afac}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Basics\RandomGenerator">
-      <UniqueIdentifier>{20d3ddfc-b6a3-454e-b2f2-7ccdbc53cc36}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Modules">
-      <UniqueIdentifier>{e69db2d4-b052-4dcc-9128-581b074df30d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="BaseObjects">
-      <UniqueIdentifier>{4cac112e-a624-43c4-8e44-219f83820c29}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="BaseObjects\StaticObject">
-      <UniqueIdentifier>{6b5acb84-a9f9-4953-a42b-6419dddbacc1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="BaseObjects\DynamicObject">
-      <UniqueIdentifier>{319819b2-2d57-4c28-9712-3a7bf4ff8ca9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Basics\Timer">
-      <UniqueIdentifier>{cb4e561a-0710-44f9-b54d-a0de766f575a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="------------ Entry_point">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
-    <Filter Include="Modules\LevelController">
-      <UniqueIdentifier>{1665d8bc-191e-4eb4-bec0-1febe8101282}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Modules\Map">
-      <UniqueIdentifier>{e84dcdcf-896e-4c8e-ad68-900c71bd05c3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Modules\MapBuilder">
-      <UniqueIdentifier>{715ab3cf-8a4f-486a-bf0c-775e989fa50d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="PackedIncludes">
       <UniqueIdentifier>{a1792357-d768-4079-ae18-7b2217fdb0fc}</UniqueIdentifier>
     </Filter>
-    <Filter Include="LevelObjects">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="LevelObjects\Static">
-      <UniqueIdentifier>{ac1ba593-fc5b-4fe3-b6c2-701dcaf88503}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="LevelObjects\Dynamic">
-      <UniqueIdentifier>{193f8ce4-b4c6-48b2-962b-a993cd68b194}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="LevelObjects\Static\Portal">
-      <UniqueIdentifier>{07716ce9-9dd5-4fd6-bd1b-4d0fa3104d57}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="LevelObjects\Static\Wall">
-      <UniqueIdentifier>{5e99cbf5-f95e-4f38-a9b9-426425934199}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="LevelObjects\Static\Food">
-      <UniqueIdentifier>{d8033544-f240-4208-bdb5-b6659da71dde}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="LevelObjects\Dynamic\Snake">
-      <UniqueIdentifier>{2e6195cc-da22-438d-8aaf-9bef0e1885d4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="LevelObjects\Dynamic\CircularSaw">
-      <UniqueIdentifier>{218b9ad0-2a9f-47f5-8ccc-8474c515b940}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Component System">
-      <UniqueIdentifier>{a1d081a7-9476-4813-88a6-d5ef4b2049ad}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Component System\Components">
+    <Filter Include="Components">
       <UniqueIdentifier>{a3ad0c49-2314-4fa6-953b-e82af2d2bcc6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Component System\Managers">
-      <UniqueIdentifier>{7e3b2717-160d-451d-8d53-354547213a7c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Component System\Modules">
-      <UniqueIdentifier>{05936463-bce3-447f-8b4c-e94468b0962e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Component System\Meta">
-      <UniqueIdentifier>{8bee4404-dd86-4364-a0b0-57cb6b1f0035}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Component System\GameObjects">
-      <UniqueIdentifier>{d645844b-4ae9-4f5f-ad4f-f24f6f9a307f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Component System\Components\Collider">
+    <Filter Include="Components\Collider">
       <UniqueIdentifier>{377d98f3-1bc9-44a9-871f-5b544ef0c2e8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Component System\Components\Collider\Forms">
+    <Filter Include="Components\Collider\Forms">
       <UniqueIdentifier>{58924b3a-8080-4752-80ce-d09116ed4563}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Component System\GameObjects\SnakeTest">
+    <Filter Include="GameObjects">
+      <UniqueIdentifier>{d645844b-4ae9-4f5f-ad4f-f24f6f9a307f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObjects\SnakeTest">
       <UniqueIdentifier>{0c85a256-ff9d-489b-805f-53b8c5cb7fd8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Component System\Utilities">
+    <Filter Include="Managers">
+      <UniqueIdentifier>{7e3b2717-160d-451d-8d53-354547213a7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Meta">
+      <UniqueIdentifier>{8bee4404-dd86-4364-a0b0-57cb6b1f0035}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Modules">
+      <UniqueIdentifier>{05936463-bce3-447f-8b4c-e94468b0962e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utilities">
       <UniqueIdentifier>{b75f7339-7655-4104-857e-feede02b2620}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utilities\RandomGenerator">
+      <UniqueIdentifier>{20d3ddfc-b6a3-454e-b2f2-7ccdbc53cc36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utilities\Point">
+      <UniqueIdentifier>{d0e6e8db-4240-4034-b3d2-d17578e62280}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utilities\Direction">
+      <UniqueIdentifier>{afa7fe8f-b515-44dc-8e15-5e5068a9afac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utilities\Timer">
+      <UniqueIdentifier>{cb4e561a-0710-44f9-b54d-a0de766f575a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utilities\Math">
+      <UniqueIdentifier>{b1cc4d1a-a8ab-446a-bdee-a107fd926195}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Camera">
+      <UniqueIdentifier>{87d85361-6521-42ba-a0e8-d85b5708c480}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Point.cpp">
-      <Filter>Basics\Point</Filter>
+      <Filter>Utilities\Point</Filter>
     </ClCompile>
     <ClCompile Include="Direction.cpp">
-      <Filter>Basics\Direction</Filter>
+      <Filter>Utilities\Direction</Filter>
     </ClCompile>
     <ClCompile Include="RandomGenerator.cpp">
-      <Filter>Basics\RandomGenerator</Filter>
-    </ClCompile>
-    <ClCompile Include="Snake.cpp">
-      <Filter>LevelObjects\Dynamic\Snake</Filter>
-    </ClCompile>
-    <ClCompile Include="Food.cpp">
-      <Filter>LevelObjects\Static\Food</Filter>
-    </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>------------ Entry_point</Filter>
-    </ClCompile>
-    <ClCompile Include="Wall.cpp">
-      <Filter>LevelObjects\Static\Wall</Filter>
-    </ClCompile>
-    <ClCompile Include="Portal.cpp">
-      <Filter>LevelObjects\Static\Portal</Filter>
-    </ClCompile>
-    <ClCompile Include="StaticObject.cpp">
-      <Filter>BaseObjects\StaticObject</Filter>
-    </ClCompile>
-    <ClCompile Include="DynamicObject.cpp">
-      <Filter>BaseObjects\DynamicObject</Filter>
-    </ClCompile>
-    <ClCompile Include="CircularSaw.cpp">
-      <Filter>LevelObjects\Dynamic\CircularSaw</Filter>
+      <Filter>Utilities\RandomGenerator</Filter>
     </ClCompile>
     <ClCompile Include="Timer.cpp">
-      <Filter>Basics\Timer</Filter>
-    </ClCompile>
-    <ClCompile Include="LevelController.cpp">
-      <Filter>Modules\LevelController</Filter>
-    </ClCompile>
-    <ClCompile Include="Map.cpp">
-      <Filter>Modules\Map</Filter>
-    </ClCompile>
-    <ClCompile Include="MapBuilder.cpp">
-      <Filter>Modules\MapBuilder</Filter>
+      <Filter>Utilities\Timer</Filter>
     </ClCompile>
     <ClCompile Include="GameObject.cpp">
-      <Filter>Component System\GameObjects</Filter>
+      <Filter>GameObjects</Filter>
     </ClCompile>
     <ClCompile Include="Component.cpp">
-      <Filter>Component System\Components</Filter>
+      <Filter>Components</Filter>
     </ClCompile>
     <ClCompile Include="Transform.cpp">
-      <Filter>Component System\Components</Filter>
+      <Filter>Components</Filter>
     </ClCompile>
     <ClCompile Include="GameManager.cpp">
-      <Filter>Component System\Managers</Filter>
+      <Filter>Managers</Filter>
     </ClCompile>
     <ClCompile Include="RenderManager.cpp">
-      <Filter>Component System\Managers</Filter>
+      <Filter>Managers</Filter>
     </ClCompile>
     <ClCompile Include="Renderer.cpp">
-      <Filter>Component System\Components</Filter>
+      <Filter>Components</Filter>
     </ClCompile>
     <ClCompile Include="Collider.cpp">
-      <Filter>Component System\Components\Collider</Filter>
+      <Filter>Components\Collider</Filter>
     </ClCompile>
     <ClCompile Include="PhysicsQuad.cpp">
-      <Filter>Component System\Components\Collider\Forms</Filter>
+      <Filter>Components\Collider\Forms</Filter>
     </ClCompile>
     <ClCompile Include="PhysicsManager.cpp">
-      <Filter>Component System\Managers</Filter>
+      <Filter>Managers</Filter>
     </ClCompile>
     <ClCompile Include="SnakeHead.cpp">
-      <Filter>Component System\GameObjects\SnakeTest</Filter>
+      <Filter>GameObjects\SnakeTest</Filter>
     </ClCompile>
     <ClCompile Include="SnakeTail.cpp">
-      <Filter>Component System\GameObjects\SnakeTest</Filter>
-    </ClCompile>
-    <ClCompile Include="math.cpp">
-      <Filter>Component System\Utilities</Filter>
+      <Filter>GameObjects\SnakeTest</Filter>
     </ClCompile>
     <ClCompile Include="Apple.cpp">
-      <Filter>Component System\GameObjects\SnakeTest</Filter>
+      <Filter>GameObjects\SnakeTest</Filter>
     </ClCompile>
     <ClCompile Include="BaseScene.cpp">
-      <Filter>Component System\Modules</Filter>
+      <Filter>Modules</Filter>
     </ClCompile>
     <ClCompile Include="MainScene.cpp">
-      <Filter>Component System\Modules</Filter>
-    </ClCompile>
-    <ClCompile Include="Camera.cpp">
-      <Filter>Component System</Filter>
+      <Filter>Modules</Filter>
     </ClCompile>
     <ClCompile Include="Block.cpp">
-      <Filter>Component System\GameObjects\SnakeTest</Filter>
+      <Filter>GameObjects\SnakeTest</Filter>
     </ClCompile>
     <ClCompile Include="Saw.cpp">
-      <Filter>Component System\GameObjects\SnakeTest</Filter>
+      <Filter>GameObjects\SnakeTest</Filter>
+    </ClCompile>
+    <ClCompile Include="math.cpp">
+      <Filter>Utilities\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Camera.cpp">
+      <Filter>Camera</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Interfaces.h">
-      <Filter>Basics</Filter>
-    </ClInclude>
     <ClInclude Include="Point.h">
-      <Filter>Basics\Point</Filter>
+      <Filter>Utilities\Point</Filter>
     </ClInclude>
     <ClInclude Include="Direction.h">
-      <Filter>Basics\Direction</Filter>
+      <Filter>Utilities\Direction</Filter>
     </ClInclude>
     <ClInclude Include="RandomGenerator.h">
-      <Filter>Basics\RandomGenerator</Filter>
-    </ClInclude>
-    <ClInclude Include="Draw_config.h">
-      <Filter>Basics</Filter>
-    </ClInclude>
-    <ClInclude Include="Snake.h">
-      <Filter>LevelObjects\Dynamic\Snake</Filter>
-    </ClInclude>
-    <ClInclude Include="Food.h">
-      <Filter>LevelObjects\Static\Food</Filter>
-    </ClInclude>
-    <ClInclude Include="Wall.h">
-      <Filter>LevelObjects\Static\Wall</Filter>
-    </ClInclude>
-    <ClInclude Include="Portal.h">
-      <Filter>LevelObjects\Static\Portal</Filter>
-    </ClInclude>
-    <ClInclude Include="StaticObject.h">
-      <Filter>BaseObjects\StaticObject</Filter>
-    </ClInclude>
-    <ClInclude Include="DynamicObject.h">
-      <Filter>BaseObjects\DynamicObject</Filter>
-    </ClInclude>
-    <ClInclude Include="CircularSaw.h">
-      <Filter>LevelObjects\Dynamic\CircularSaw</Filter>
+      <Filter>Utilities\RandomGenerator</Filter>
     </ClInclude>
     <ClInclude Include="Timer.h">
-      <Filter>Basics\Timer</Filter>
-    </ClInclude>
-    <ClInclude Include="LevelController.h">
-      <Filter>Modules\LevelController</Filter>
-    </ClInclude>
-    <ClInclude Include="Map.h">
-      <Filter>Modules\Map</Filter>
-    </ClInclude>
-    <ClInclude Include="MapBuilder.h">
-      <Filter>Modules\MapBuilder</Filter>
-    </ClInclude>
-    <ClInclude Include="StaticObjects.h">
-      <Filter>PackedIncludes</Filter>
-    </ClInclude>
-    <ClInclude Include="declStaticObjects.h">
-      <Filter>PackedIncludes</Filter>
-    </ClInclude>
-    <ClInclude Include="DynamicObjects.h">
-      <Filter>PackedIncludes</Filter>
-    </ClInclude>
-    <ClInclude Include="declDynamicObjects.h">
-      <Filter>PackedIncludes</Filter>
-    </ClInclude>
-    <ClInclude Include="LevelObjects.h">
-      <Filter>PackedIncludes</Filter>
-    </ClInclude>
-    <ClInclude Include="declLevelObjects.h">
-      <Filter>PackedIncludes</Filter>
+      <Filter>Utilities\Timer</Filter>
     </ClInclude>
     <ClInclude Include="GameObject.h">
-      <Filter>Component System\GameObjects</Filter>
+      <Filter>GameObjects</Filter>
     </ClInclude>
     <ClInclude Include="Component.h">
-      <Filter>Component System\Components</Filter>
+      <Filter>Components</Filter>
     </ClInclude>
     <ClInclude Include="Transform.h">
-      <Filter>Component System\Components</Filter>
+      <Filter>Components</Filter>
     </ClInclude>
     <ClInclude Include="GameManager.h">
-      <Filter>Component System\Managers</Filter>
+      <Filter>Managers</Filter>
     </ClInclude>
     <ClInclude Include="RenderManager.h">
-      <Filter>Component System\Managers</Filter>
+      <Filter>Managers</Filter>
     </ClInclude>
     <ClInclude Include="Renderer.h">
-      <Filter>Component System\Components</Filter>
+      <Filter>Components</Filter>
     </ClInclude>
     <ClInclude Include="CompReg.h">
-      <Filter>Component System\Meta</Filter>
+      <Filter>Meta</Filter>
     </ClInclude>
     <ClInclude Include="Collider.h">
-      <Filter>Component System\Components\Collider</Filter>
+      <Filter>Components\Collider</Filter>
     </ClInclude>
     <ClInclude Include="PhysicsForm.h">
-      <Filter>Component System\Components\Collider\Forms</Filter>
+      <Filter>Components\Collider\Forms</Filter>
     </ClInclude>
     <ClInclude Include="PhysicsQuad.h">
-      <Filter>Component System\Components\Collider\Forms</Filter>
+      <Filter>Components\Collider\Forms</Filter>
     </ClInclude>
     <ClInclude Include="PhysicsManager.h">
-      <Filter>Component System\Managers</Filter>
+      <Filter>Managers</Filter>
     </ClInclude>
     <ClInclude Include="SnakeHead.h">
-      <Filter>Component System\GameObjects\SnakeTest</Filter>
+      <Filter>GameObjects\SnakeTest</Filter>
     </ClInclude>
     <ClInclude Include="SnakeTail.h">
-      <Filter>Component System\GameObjects\SnakeTest</Filter>
-    </ClInclude>
-    <ClInclude Include="math.h">
-      <Filter>Component System\Utilities</Filter>
+      <Filter>GameObjects\SnakeTest</Filter>
     </ClInclude>
     <ClInclude Include="Apple.h">
-      <Filter>Component System\GameObjects\SnakeTest</Filter>
+      <Filter>GameObjects\SnakeTest</Filter>
     </ClInclude>
     <ClInclude Include="BaseScene.h">
-      <Filter>Component System\Modules</Filter>
+      <Filter>Modules</Filter>
     </ClInclude>
     <ClInclude Include="MainScene.h">
-      <Filter>Component System\Modules</Filter>
-    </ClInclude>
-    <ClInclude Include="Camera.h">
-      <Filter>Component System</Filter>
+      <Filter>Modules</Filter>
     </ClInclude>
     <ClInclude Include="Block.h">
-      <Filter>Component System\GameObjects\SnakeTest</Filter>
+      <Filter>GameObjects\SnakeTest</Filter>
     </ClInclude>
     <ClInclude Include="Saw.h">
-      <Filter>Component System\GameObjects\SnakeTest</Filter>
+      <Filter>GameObjects\SnakeTest</Filter>
+    </ClInclude>
+    <ClInclude Include="math.h">
+      <Filter>Utilities\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Camera</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
