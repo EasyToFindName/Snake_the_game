@@ -1,7 +1,12 @@
 #include "ResourceCacher.h"
-
+#include <iostream>
 sf::Font* ResourceCacher::loadFont(const std::string& filePath) {
 	auto font = std::make_unique<sf::Font>();
+
+	if (!font) {
+		std::cout << "Warning!!! Unable to allocate Font\n";
+		return nullptr;
+	}
 	
 	if (!font->loadFromFile(filePath)) {
 		return nullptr;
