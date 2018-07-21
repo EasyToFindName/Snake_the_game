@@ -1,15 +1,30 @@
 #pragma once
+#include <memory>
+
 #include "Component.h"
-#include <SFML/Graphics.hpp>
+#include "PhysicsForm.h"
+
+using PhysicLayer = unsigned long;
 
 COMPONENT(Collider)
 public:
-	Collider(GameObject*);
-	void setColliderBox(const sf::Rect<float>& box);
-	void calcCollision();
+	Collider(GameObject* gameObject);
+	virtual ~Collider();
+
+	virtual Component* clone(GameObject* gameObject) override;
+
+	void setForm(PhysicsForm* newForm);
+	PhysicsForm * getForm() const;
+
+	void update();
+	void onCollision(const Collider& collider);
+
+	void setLayer(PhysicLayer layer);
+	PhysicLayer getLayer() const;
 
 
-	virtual ~Collider() = default;
 private:
-	sf::Rect<float> m_colliderBox;
-END_COMPONENT
+	std::unique_ptr<PhysicsForm> m_form;
+	PhysicLayer m_layer;
+
+END_COMPONENT(Collider)
